@@ -1,0 +1,221 @@
+  [1m[36mSQL (0.3ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.5ms)[0m  SHOW TABLES
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+  [1m[36mSQL (0.2ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW TABLES
+  [1m[36mSQL (36.2ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+Migrating to ResorcerTotalMigrations (20100811055958)
+  [1m[35mSQL (0.4ms)[0m  CREATE TABLE `resources` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` varchar(255), `description` text, `url` varchar(255) NOT NULL, `content_type` varchar(255), `notes` text, `author` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+Mysql::Error: Table 'resources' already exists: CREATE TABLE `resources` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` varchar(255), `description` text, `url` varchar(255) NOT NULL, `content_type` varchar(255), `notes` text, `author` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36mSQL (0.2ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (38.0ms)[0m  CREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB
+  [1m[36mSQL (0.5ms)[0m  [1mSHOW KEYS FROM `schema_migrations`[0m
+  [1m[35mSQL (7.7ms)[0m  CREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)
+  [1m[36mSQL (0.4ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.8ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+Migrating to ResorcerTotalMigrations (20100811055958)
+  [1m[35mSQL (4.7ms)[0m  CREATE TABLE `resources` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` varchar(255), `description` text, `url` varchar(255) NOT NULL, `content_type` varchar(255), `notes` text, `author` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36mSQL (0.3ms)[0m  [1mSHOW KEYS FROM `resources`[0m
+  [1m[35mSQL (6.3ms)[0m  CREATE INDEX `index_resources_on_url` ON `resources` (`url`)
+  [1m[36mSQL (3.8ms)[0m  [1mCREATE TABLE `categories` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255) NOT NULL, `description` varchar(255), `parent_id` int(11), `lft` int(11), `rgt` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW KEYS FROM `categories`
+  [1m[36mSQL (6.9ms)[0m  [1mCREATE INDEX `index_categories_on_name` ON `categories` (`name`)[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW KEYS FROM `categories`
+  [1m[36mSQL (28.9ms)[0m  [1mCREATE INDEX `index_categories_on_parent_id` ON `categories` (`parent_id`)[0m
+  [1m[35mSQL (0.5ms)[0m  SHOW KEYS FROM `categories`
+  [1m[36mSQL (7.1ms)[0m  [1mCREATE INDEX `index_categories_on_lft` ON `categories` (`lft`)[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW KEYS FROM `categories`
+  [1m[36mSQL (6.3ms)[0m  [1mCREATE INDEX `index_categories_on_rgt` ON `categories` (`rgt`)[0m
+  [1m[35mSQL (2.2ms)[0m  CREATE TABLE `posts` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` varchar(255) NOT NULL, `subtitle` varchar(255), `body` text NOT NULL, `postable_id` int(11), `postable_type` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36mSQL (0.3ms)[0m  [1mSHOW KEYS FROM `posts`[0m
+  [1m[35mSQL (5.5ms)[0m  CREATE INDEX `index_posts_on_title` ON `posts` (`title`)
+  [1m[36mSQL (0.3ms)[0m  [1mSHOW KEYS FROM `posts`[0m
+  [1m[35mSQL (5.9ms)[0m  CREATE INDEX `index_posts_on_postable_id` ON `posts` (`postable_id`)
+  [1m[36mSQL (0.3ms)[0m  [1mSHOW KEYS FROM `posts`[0m
+  [1m[35mSQL (6.4ms)[0m  CREATE INDEX `index_posts_on_postable_type` ON `posts` (`postable_type`)
+  [1m[36mSQL (4.4ms)[0m  [1mCREATE TABLE `comments` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `body` text NOT NULL, `name` varchar(255), `title` varchar(255), `parent_id` int(11), `lft` int(11), `rgt` int(11), `commentable_id` int(11), `commentable_type` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (0.6ms)[0m  SHOW KEYS FROM `comments`
+  [1m[36mSQL (6.4ms)[0m  [1mCREATE INDEX `index_comments_on_parent_id` ON `comments` (`parent_id`)[0m
+  [1m[35mSQL (0.5ms)[0m  SHOW KEYS FROM `comments`
+  [1m[36mSQL (7.8ms)[0m  [1mCREATE INDEX `index_comments_on_lft` ON `comments` (`lft`)[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW KEYS FROM `comments`
+  [1m[36mSQL (6.7ms)[0m  [1mCREATE INDEX `index_comments_on_rgt` ON `comments` (`rgt`)[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW KEYS FROM `comments`
+  [1m[36mSQL (8.9ms)[0m  [1mCREATE INDEX `index_comments_on_commentable_id` ON `comments` (`commentable_id`)[0m
+  [1m[35mSQL (0.7ms)[0m  SHOW KEYS FROM `comments`
+  [1m[36mSQL (7.5ms)[0m  [1mCREATE INDEX `index_comments_on_commentable_type` ON `comments` (`commentable_type`)[0m
+  [1m[35mSQL (1.5ms)[0m  describe `schema_migrations`
+  [1m[36mSQL (2.1ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20100811055958')[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW TABLES
+  [1m[36mSQL (1.1ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW TABLES
+  [1m[36mSQL (3.1ms)[0m  [1mdescribe `categories`[0m
+  [1m[35mSQL (1.5ms)[0m  SHOW KEYS FROM `categories`
+  [1m[36mSQL (2.8ms)[0m  [1mdescribe `comments`[0m
+  [1m[35mSQL (1.5ms)[0m  SHOW KEYS FROM `comments`
+  [1m[36mSQL (2.9ms)[0m  [1mdescribe `posts`[0m
+  [1m[35mSQL (1.5ms)[0m  SHOW KEYS FROM `posts`
+  [1m[36mSQL (2.7ms)[0m  [1mdescribe `resources`[0m
+  [1m[35mSQL (1.4ms)[0m  SHOW KEYS FROM `resources`
+  [1m[36mSQL (0.3ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW TABLES
+  [1m[36mSQL (37.6ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+  [1m[35mSQL (0.3ms)[0m  DROP DATABASE IF EXISTS `resorcer_test`
+  [1m[36mSQL (0.2ms)[0m  [1mCREATE DATABASE `resorcer_test` DEFAULT CHARACTER SET `utf8`[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW TABLES
+  [1m[36mSQL (3.4ms)[0m  [1mCREATE TABLE `categories` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255) NOT NULL, `description` varchar(255), `parent_id` int(11), `lft` int(11), `rgt` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (0.5ms)[0m  SHOW KEYS FROM `categories`
+  [1m[36mSQL (7.5ms)[0m  [1mCREATE INDEX `index_categories_on_lft` ON `categories` (`lft`)[0m
+  [1m[35mSQL (0.5ms)[0m  SHOW KEYS FROM `categories`
+  [1m[36mSQL (8.5ms)[0m  [1mCREATE INDEX `index_categories_on_name` ON `categories` (`name`)[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW KEYS FROM `categories`
+  [1m[36mSQL (8.6ms)[0m  [1mCREATE INDEX `index_categories_on_parent_id` ON `categories` (`parent_id`)[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW KEYS FROM `categories`
+  [1m[36mSQL (7.5ms)[0m  [1mCREATE INDEX `index_categories_on_rgt` ON `categories` (`rgt`)[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW TABLES
+  [1m[36mSQL (3.3ms)[0m  [1mCREATE TABLE `comments` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `body` text NOT NULL, `name` varchar(255), `title` varchar(255), `parent_id` int(11), `lft` int(11), `rgt` int(11), `commentable_id` int(11), `commentable_type` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW KEYS FROM `comments`
+  [1m[36mSQL (8.8ms)[0m  [1mCREATE INDEX `index_comments_on_commentable_id` ON `comments` (`commentable_id`)[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW KEYS FROM `comments`
+  [1m[36mSQL (6.2ms)[0m  [1mCREATE INDEX `index_comments_on_commentable_type` ON `comments` (`commentable_type`)[0m
+  [1m[35mSQL (0.5ms)[0m  SHOW KEYS FROM `comments`
+  [1m[36mSQL (8.6ms)[0m  [1mCREATE INDEX `index_comments_on_lft` ON `comments` (`lft`)[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW KEYS FROM `comments`
+  [1m[36mSQL (9.3ms)[0m  [1mCREATE INDEX `index_comments_on_parent_id` ON `comments` (`parent_id`)[0m
+  [1m[35mSQL (0.6ms)[0m  SHOW KEYS FROM `comments`
+  [1m[36mSQL (9.0ms)[0m  [1mCREATE INDEX `index_comments_on_rgt` ON `comments` (`rgt`)[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW TABLES
+  [1m[36mSQL (2.7ms)[0m  [1mCREATE TABLE `posts` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` varchar(255) NOT NULL, `subtitle` varchar(255), `body` text NOT NULL, `postable_id` int(11), `postable_type` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW KEYS FROM `posts`
+  [1m[36mSQL (8.5ms)[0m  [1mCREATE INDEX `index_posts_on_postable_id` ON `posts` (`postable_id`)[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW KEYS FROM `posts`
+  [1m[36mSQL (8.0ms)[0m  [1mCREATE INDEX `index_posts_on_postable_type` ON `posts` (`postable_type`)[0m
+  [1m[35mSQL (0.5ms)[0m  SHOW KEYS FROM `posts`
+  [1m[36mSQL (7.2ms)[0m  [1mCREATE INDEX `index_posts_on_title` ON `posts` (`title`)[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW TABLES
+  [1m[36mSQL (3.9ms)[0m  [1mCREATE TABLE `resources` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` varchar(255), `description` text, `url` varchar(255) NOT NULL, `content_type` varchar(255), `notes` text, `author` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW KEYS FROM `resources`
+  [1m[36mSQL (7.6ms)[0m  [1mCREATE INDEX `index_resources_on_url` ON `resources` (`url`)[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW TABLES
+  [1m[36mSQL (3.5ms)[0m  [1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW KEYS FROM `schema_migrations`
+  [1m[36mSQL (8.1ms)[0m  [1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT version FROM `schema_migrations`[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20100811055958')
+  [1m[36mSQL (0.3ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.2ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (41.5ms)[0m  CREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB
+  [1m[36mSQL (0.5ms)[0m  [1mSHOW KEYS FROM `schema_migrations`[0m
+  [1m[35mSQL (33.3ms)[0m  CREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)
+  [1m[36mSQL (0.4ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW TABLES
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+  [1m[36mSQL (0.3ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW TABLES
+  [1m[36mSQL (38.5ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+Migrating to ResorcerTotalMigrations (20100811083909)
+  [1m[35mSQL (3.7ms)[0m  CREATE TABLE `resources` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` varchar(255), `description` text, `url` varchar(255) NOT NULL, `content_type` varchar(255), `notes` text, `author` varchar(255), `language` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36mSQL (0.3ms)[0m  [1mSHOW KEYS FROM `resources`[0m
+  [1m[35mSQL (6.0ms)[0m  CREATE INDEX `index_resources_on_url` ON `resources` (`url`)
+  [1m[36mSQL (3.3ms)[0m  [1mCREATE TABLE `categories` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255) NOT NULL, `description` varchar(255), `parent_id` int(11), `lft` int(11), `rgt` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (0.5ms)[0m  SHOW KEYS FROM `categories`
+  [1m[36mSQL (8.5ms)[0m  [1mCREATE INDEX `index_categories_on_name` ON `categories` (`name`)[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW KEYS FROM `categories`
+  [1m[36mSQL (8.0ms)[0m  [1mCREATE INDEX `index_categories_on_parent_id` ON `categories` (`parent_id`)[0m
+  [1m[35mSQL (0.5ms)[0m  SHOW KEYS FROM `categories`
+  [1m[36mSQL (7.7ms)[0m  [1mCREATE INDEX `index_categories_on_lft` ON `categories` (`lft`)[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW KEYS FROM `categories`
+  [1m[36mSQL (8.0ms)[0m  [1mCREATE INDEX `index_categories_on_rgt` ON `categories` (`rgt`)[0m
+  [1m[35mSQL (3.5ms)[0m  CREATE TABLE `posts` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` varchar(255) NOT NULL, `subtitle` varchar(255), `body` text NOT NULL, `postable_id` int(11), `postable_type` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36mSQL (0.3ms)[0m  [1mSHOW KEYS FROM `posts`[0m
+  [1m[35mSQL (7.0ms)[0m  CREATE INDEX `index_posts_on_title` ON `posts` (`title`)
+  [1m[36mSQL (0.7ms)[0m  [1mSHOW KEYS FROM `posts`[0m
+  [1m[35mSQL (8.9ms)[0m  CREATE INDEX `index_posts_on_postable_id` ON `posts` (`postable_id`)
+  [1m[36mSQL (0.4ms)[0m  [1mSHOW KEYS FROM `posts`[0m
+  [1m[35mSQL (8.1ms)[0m  CREATE INDEX `index_posts_on_postable_type` ON `posts` (`postable_type`)
+  [1m[36mSQL (2.6ms)[0m  [1mCREATE TABLE `comments` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `body` text NOT NULL, `name` varchar(255), `title` varchar(255), `parent_id` int(11), `lft` int(11), `rgt` int(11), `commentable_id` int(11), `commentable_type` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW KEYS FROM `comments`
+  [1m[36mSQL (6.7ms)[0m  [1mCREATE INDEX `index_comments_on_parent_id` ON `comments` (`parent_id`)[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW KEYS FROM `comments`
+  [1m[36mSQL (8.2ms)[0m  [1mCREATE INDEX `index_comments_on_lft` ON `comments` (`lft`)[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW KEYS FROM `comments`
+  [1m[36mSQL (6.2ms)[0m  [1mCREATE INDEX `index_comments_on_rgt` ON `comments` (`rgt`)[0m
+  [1m[35mSQL (0.6ms)[0m  SHOW KEYS FROM `comments`
+  [1m[36mSQL (8.7ms)[0m  [1mCREATE INDEX `index_comments_on_commentable_id` ON `comments` (`commentable_id`)[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW KEYS FROM `comments`
+  [1m[36mSQL (6.8ms)[0m  [1mCREATE INDEX `index_comments_on_commentable_type` ON `comments` (`commentable_type`)[0m
+  [1m[35mSQL (2.8ms)[0m  CREATE TABLE `users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `first_name` varchar(255), `last_name` varchar(255), `login` varchar(255), `email` varchar(255) NOT NULL, `website` varchar(255), `facebook_account` varchar(255), `twitter_account` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36mSQL (0.3ms)[0m  [1mSHOW KEYS FROM `users`[0m
+  [1m[35mSQL (7.6ms)[0m  CREATE INDEX `index_users_on_login` ON `users` (`login`)
+  [1m[36mSQL (0.5ms)[0m  [1mSHOW KEYS FROM `users`[0m
+  [1m[35mSQL (7.7ms)[0m  CREATE INDEX `index_users_on_email` ON `users` (`email`)
+  [1m[36mSQL (1.8ms)[0m  [1mdescribe `schema_migrations`[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20100811083909')
+  [1m[36mSQL (0.4ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (3.2ms)[0m  SELECT `schema_migrations`.`version` FROM `schema_migrations`
+  [1m[36mSQL (0.5ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (3.1ms)[0m  describe `categories`
+  [1m[36mSQL (0.6ms)[0m  [1mSHOW KEYS FROM `categories`[0m
+  [1m[35mSQL (2.9ms)[0m  describe `comments`
+  [1m[36mSQL (1.8ms)[0m  [1mSHOW KEYS FROM `comments`[0m
+  [1m[35mSQL (4.0ms)[0m  describe `posts`
+  [1m[36mSQL (1.8ms)[0m  [1mSHOW KEYS FROM `posts`[0m
+  [1m[35mSQL (4.6ms)[0m  describe `resources`
+  [1m[36mSQL (1.4ms)[0m  [1mSHOW KEYS FROM `resources`[0m
+  [1m[35mSQL (3.7ms)[0m  describe `users`
+  [1m[36mSQL (1.8ms)[0m  [1mSHOW KEYS FROM `users`[0m
+  [1m[36mSQL (0.3ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW TABLES
+  [1m[36mSQL (41.0ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+  [1m[35mSQL (0.3ms)[0m  DROP DATABASE IF EXISTS `resorcer_test`
+  [1m[36mSQL (0.2ms)[0m  [1mCREATE DATABASE `resorcer_test` DEFAULT CHARACTER SET `utf8`[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW TABLES
+  [1m[36mSQL (3.0ms)[0m  [1mCREATE TABLE `categories` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255) NOT NULL, `description` varchar(255), `parent_id` int(11), `lft` int(11), `rgt` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW KEYS FROM `categories`
+  [1m[36mSQL (6.8ms)[0m  [1mCREATE INDEX `index_categories_on_lft` ON `categories` (`lft`)[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW KEYS FROM `categories`
+  [1m[36mSQL (8.9ms)[0m  [1mCREATE INDEX `index_categories_on_name` ON `categories` (`name`)[0m
+  [1m[35mSQL (0.5ms)[0m  SHOW KEYS FROM `categories`
+  [1m[36mSQL (7.5ms)[0m  [1mCREATE INDEX `index_categories_on_parent_id` ON `categories` (`parent_id`)[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW KEYS FROM `categories`
+  [1m[36mSQL (7.2ms)[0m  [1mCREATE INDEX `index_categories_on_rgt` ON `categories` (`rgt`)[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW TABLES
+  [1m[36mSQL (3.3ms)[0m  [1mCREATE TABLE `comments` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `body` text NOT NULL, `name` varchar(255), `title` varchar(255), `parent_id` int(11), `lft` int(11), `rgt` int(11), `commentable_id` int(11), `commentable_type` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW KEYS FROM `comments`
+  [1m[36mSQL (7.7ms)[0m  [1mCREATE INDEX `index_comments_on_commentable_id` ON `comments` (`commentable_id`)[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW KEYS FROM `comments`
+  [1m[36mSQL (8.0ms)[0m  [1mCREATE INDEX `index_comments_on_commentable_type` ON `comments` (`commentable_type`)[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW KEYS FROM `comments`
+  [1m[36mSQL (8.5ms)[0m  [1mCREATE INDEX `index_comments_on_lft` ON `comments` (`lft`)[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW KEYS FROM `comments`
+  [1m[36mSQL (7.1ms)[0m  [1mCREATE INDEX `index_comments_on_parent_id` ON `comments` (`parent_id`)[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW KEYS FROM `comments`
+  [1m[36mSQL (9.2ms)[0m  [1mCREATE INDEX `index_comments_on_rgt` ON `comments` (`rgt`)[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW TABLES
+  [1m[36mSQL (3.2ms)[0m  [1mCREATE TABLE `posts` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` varchar(255) NOT NULL, `subtitle` varchar(255), `body` text NOT NULL, `postable_id` int(11), `postable_type` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (0.5ms)[0m  SHOW KEYS FROM `posts`
+  [1m[36mSQL (8.2ms)[0m  [1mCREATE INDEX `index_posts_on_postable_id` ON `posts` (`postable_id`)[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW KEYS FROM `posts`
+  [1m[36mSQL (34.2ms)[0m  [1mCREATE INDEX `index_posts_on_postable_type` ON `posts` (`postable_type`)[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW KEYS FROM `posts`
+  [1m[36mSQL (5.7ms)[0m  [1mCREATE INDEX `index_posts_on_title` ON `posts` (`title`)[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW TABLES
+  [1m[36mSQL (3.3ms)[0m  [1mCREATE TABLE `resources` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` varchar(255), `description` text, `url` varchar(255) NOT NULL, `content_type` varchar(255), `notes` text, `author` varchar(255), `language` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW KEYS FROM `resources`
+  [1m[36mSQL (6.1ms)[0m  [1mCREATE INDEX `index_resources_on_url` ON `resources` (`url`)[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW TABLES
+  [1m[36mSQL (2.6ms)[0m  [1mCREATE TABLE `users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `first_name` varchar(255), `last_name` varchar(255), `login` varchar(255), `email` varchar(255) NOT NULL, `website` varchar(255), `facebook_account` varchar(255), `twitter_account` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW KEYS FROM `users`
+  [1m[36mSQL (6.3ms)[0m  [1mCREATE INDEX `index_users_on_email` ON `users` (`email`)[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW KEYS FROM `users`
+  [1m[36mSQL (5.7ms)[0m  [1mCREATE INDEX `index_users_on_login` ON `users` (`login`)[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW TABLES
+  [1m[36mSQL (2.5ms)[0m  [1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW KEYS FROM `schema_migrations`
+  [1m[36mSQL (5.2ms)[0m  [1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT version FROM `schema_migrations`[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20100811083909')

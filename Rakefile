@@ -1,57 +1,39 @@
-require 'rubygems'
+# encoding: UTF-8
 require 'rake'
+require 'rake/rdoctask'
+require 'rake/gempackagetask'
 
-begin
-  require 'jeweler'
-  Jeweler::Tasks.new do |gem|
-    gem.name = "resorcer_core"
-    gem.summary = %Q{TODO: one-line summary of your gem}
-    gem.description = %Q{TODO: longer description of your gem}
-    gem.email = "bob@lessonplanet.com"
-    gem.homepage = "http://github.com/resgraph/resorcer_core"
-    gem.authors = ["resgraph"]
-    gem.add_development_dependency "rspec", ">= 1.2.9"
-    gem.add_development_dependency "cucumber", ">= 0"
-    # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
-  end
-  Jeweler::GemcutterTasks.new
-rescue LoadError
-  puts "Jeweler (or a dependency) not available. Install it with: gem install jeweler"
-end
+require 'rspec/core'
+require 'rspec/core/rake_task'
 
-require 'spec/rake/spectask'
-Spec::Rake::SpecTask.new(:spec) do |spec|
-  spec.libs << 'lib' << 'spec'
-  spec.spec_files = FileList['spec/**/*_spec.rb']
-end
-
-Spec::Rake::SpecTask.new(:rcov) do |spec|
-  spec.libs << 'lib' << 'spec'
-  spec.pattern = 'spec/**/*_spec.rb'
-  spec.rcov = true
-end
-
-task :spec => :check_dependencies
-
-begin
-  require 'cucumber/rake/task'
-  Cucumber::Rake::Task.new(:features)
-
-  task :features => :check_dependencies
-rescue LoadError
-  task :features do
-    abort "Cucumber is not available. In order to run features, you must: sudo gem install cucumber"
-  end
-end
+Rspec::Core::RakeTask.new(:spec)
 
 task :default => :spec
 
-require 'rake/rdoctask'
-Rake::RDocTask.new do |rdoc|
-  version = File.exist?('VERSION') ? File.read('VERSION') : ""
-
+Rake::RDocTask.new(:rdoc) do |rdoc|
   rdoc.rdoc_dir = 'rdoc'
-  rdoc.title = "resorcer_core #{version}"
-  rdoc.rdoc_files.include('README*')
+  rdoc.title    = 'ResorcerCore'
+  rdoc.options << '--line-numbers' << '--inline-source'
+  rdoc.rdoc_files.include('README.rdoc')
   rdoc.rdoc_files.include('lib/**/*.rb')
+end
+
+spec = Gem::Specification.new do |s|
+  s.name = "resorcer-core"
+  s.summary = "Resorcer system gem."
+  s.description = "Resorcer is a system for creating web properties that aggregate web resources and present them for searching and access."
+  s.email = "forever@thelongterm.net"
+  s.homepage = "http://www.resorcer.com"
+  s.authors = ["Robert Schmitt"]
+  s.files =  FileList["[A-Z]*", "lib/**/*", "app/**/*"]
+  s.add_dependency("awesome_nested_set", ">= 1.4.3")
+  s.version = "0.0.1"
+end
+
+Rake::GemPackageTask.new(spec) do |pkg|
+end
+
+desc "Install the gem #{spec.name}-#{spec.version}.gem"
+task :install do
+  system("gem install pkg/#{spec.name}-#{spec.version}.gem --no-ri --no-rdoc")
 end
