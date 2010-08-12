@@ -3225,3 +3225,1505 @@ WARNING: Can't mass-assign protected attributes: lft, rgt
   [1m[35mSQL (0.2ms)[0m  COMMIT
   [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
   [1m[35mSQL (0.3ms)[0m  ROLLBACK
+  [1m[36mSQL (0.6ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.5ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.8ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+Migrating to ResorcerTotalMigrations (20100811083909)
+  [1m[35mSQL (0.5ms)[0m  DELETE FROM `categories`
+WARNING: Can't mass-assign protected attributes: lft, rgt
+  [1m[36mCategory Load (1.0ms)[0m  [1mSELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` = BINARY 'valid category') AND (`categories`.`parent_id` = 0) LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  DELETE FROM `categories`
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` IS NULL) AND (`categories`.`parent_id` IS NULL) LIMIT 1[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` IS NULL) AND (`categories`.`parent_id` IS NULL) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM `categories`[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mCategory Load (0.4ms)[0m  [1mSELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` = BINARY 'Science') AND (`categories`.`parent_id` IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT MAX(`categories`.`rgt`) AS max_id FROM `categories`
+  [1m[36mSQL (1.7ms)[0m  [1mdescribe `categories`[0m
+  [1m[35mSQL (1.2ms)[0m  INSERT INTO `categories` (`created_at`, `description`, `lft`, `name`, `parent_id`, `rgt`, `updated_at`) VALUES ('2010-08-11 17:38:41', 'A top level category to hold all sub-categories of Science.', 1, 'Science', NULL, 2, '2010-08-11 17:38:41')
+  [1m[36mSQL (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` = BINARY 'Science') AND (`categories`.`parent_id` = 17) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM `categories`[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mCategory Load (0.4ms)[0m  [1mSELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` = BINARY 'Science') AND (`categories`.`parent_id` IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT MAX(`categories`.`rgt`) AS max_id FROM `categories`
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `categories` (`created_at`, `description`, `lft`, `name`, `parent_id`, `rgt`, `updated_at`) VALUES ('2010-08-11 17:38:41', 'A top level category to hold all sub-categories of Science.', 1, 'Science', NULL, 2, '2010-08-11 17:38:41')[0m
+  [1m[35mSQL (0.1ms)[0m  COMMIT
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` = BINARY 'Science') AND (`categories`.`parent_id` IS NULL) LIMIT 1[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` = BINARY 'Science') AND (`categories`.`parent_id` IS NULL) LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM `categories`[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` = BINARY 'Science') AND (`categories`.`parent_id` IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT MAX(`categories`.`rgt`) AS max_id FROM `categories`
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `categories` (`created_at`, `description`, `lft`, `name`, `parent_id`, `rgt`, `updated_at`) VALUES ('2010-08-11 17:38:41', 'A top level category to hold all sub-categories of Science.', 1, 'Science', NULL, 2, '2010-08-11 17:38:41')[0m
+  [1m[35mSQL (0.1ms)[0m  COMMIT
+  [1m[36mSQL (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mCategory Load (0.3ms)[0m  SELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` = BINARY 'Physics') AND (`categories`.`parent_id` IS NULL) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT MAX(`categories`.`rgt`) AS max_id FROM `categories`[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO `categories` (`created_at`, `description`, `lft`, `name`, `parent_id`, `rgt`, `updated_at`) VALUES ('2010-08-11 17:38:41', 'A sub-category of Science.', 3, 'Physics', NULL, 4, '2010-08-11 17:38:41')
+  [1m[36mSQL (0.0ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.0ms)[0m  BEGIN
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 19) LIMIT 1[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 20) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE `categories` SET `lft` = CASE WHEN `lft` BETWEEN 2 AND 2 THEN `lft` + 4 - 2 WHEN `lft` BETWEEN 3 AND 4 THEN `lft` + 2 - 3 ELSE `lft` END, `rgt` = CASE WHEN `rgt` BETWEEN 2 AND 2 THEN `rgt` + 4 - 2 WHEN `rgt` BETWEEN 3 AND 4 THEN `rgt` + 2 - 3 ELSE `rgt` END, `parent_id` = CASE WHEN id = 20 THEN 19 ELSE `parent_id` END [0m
+  [1m[35mSQL (0.1ms)[0m  COMMIT
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 19) LIMIT 1[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 20) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mCategory Load (0.3ms)[0m  SELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` = BINARY 'Biology') AND (`categories`.`parent_id` IS NULL) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT MAX(`categories`.`rgt`) AS max_id FROM `categories`[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `categories` (`created_at`, `description`, `lft`, `name`, `parent_id`, `rgt`, `updated_at`) VALUES ('2010-08-11 17:38:41', 'A sub-category of Science.', 5, 'Biology', NULL, 6, '2010-08-11 17:38:41')
+  [1m[36mSQL (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.0ms)[0m  BEGIN
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 19) LIMIT 1[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 21) LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE `categories` SET `lft` = CASE WHEN `lft` BETWEEN 4 AND 4 THEN `lft` + 6 - 4 WHEN `lft` BETWEEN 5 AND 6 THEN `lft` + 4 - 5 ELSE `lft` END, `rgt` = CASE WHEN `rgt` BETWEEN 4 AND 4 THEN `rgt` + 6 - 4 WHEN `rgt` BETWEEN 5 AND 6 THEN `rgt` + 4 - 5 ELSE `rgt` END, `parent_id` = CASE WHEN id = 21 THEN 19 ELSE `parent_id` END [0m
+  [1m[35mSQL (0.1ms)[0m  COMMIT
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 19) LIMIT 1[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 21) LIMIT 1
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT `categories`.* FROM `categories` WHERE (`categories`.`id` = 19) LIMIT 1[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT `categories`.* FROM `categories` WHERE (`categories`.`parent_id` IS NULL) ORDER BY `lft` LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM `categories`[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` = BINARY 'Science') AND (`categories`.`parent_id` IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT MAX(`categories`.`rgt`) AS max_id FROM `categories`
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO `categories` (`created_at`, `description`, `lft`, `name`, `parent_id`, `rgt`, `updated_at`) VALUES ('2010-08-11 17:38:41', 'A top level category to hold all sub-categories of Science.', 1, 'Science', NULL, 2, '2010-08-11 17:38:41')[0m
+  [1m[35mSQL (0.0ms)[0m  COMMIT
+  [1m[36mSQL (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` = BINARY 'Physics') AND (`categories`.`parent_id` IS NULL) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT MAX(`categories`.`rgt`) AS max_id FROM `categories`[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `categories` (`created_at`, `description`, `lft`, `name`, `parent_id`, `rgt`, `updated_at`) VALUES ('2010-08-11 17:38:41', 'A sub-category of Science.', 3, 'Physics', NULL, 4, '2010-08-11 17:38:41')
+  [1m[36mSQL (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.0ms)[0m  BEGIN
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 22) LIMIT 1[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 23) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE `categories` SET `lft` = CASE WHEN `lft` BETWEEN 2 AND 2 THEN `lft` + 4 - 2 WHEN `lft` BETWEEN 3 AND 4 THEN `lft` + 2 - 3 ELSE `lft` END, `rgt` = CASE WHEN `rgt` BETWEEN 2 AND 2 THEN `rgt` + 4 - 2 WHEN `rgt` BETWEEN 3 AND 4 THEN `rgt` + 2 - 3 ELSE `rgt` END, `parent_id` = CASE WHEN id = 23 THEN 22 ELSE `parent_id` END [0m
+  [1m[35mSQL (0.1ms)[0m  COMMIT
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 22) LIMIT 1[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 23) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` = BINARY 'Biology') AND (`categories`.`parent_id` IS NULL) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT MAX(`categories`.`rgt`) AS max_id FROM `categories`[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `categories` (`created_at`, `description`, `lft`, `name`, `parent_id`, `rgt`, `updated_at`) VALUES ('2010-08-11 17:38:41', 'A sub-category of Science.', 5, 'Biology', NULL, 6, '2010-08-11 17:38:41')
+  [1m[36mSQL (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 22) LIMIT 1[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 24) LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE `categories` SET `lft` = CASE WHEN `lft` BETWEEN 4 AND 4 THEN `lft` + 6 - 4 WHEN `lft` BETWEEN 5 AND 6 THEN `lft` + 4 - 5 ELSE `lft` END, `rgt` = CASE WHEN `rgt` BETWEEN 4 AND 4 THEN `rgt` + 6 - 4 WHEN `rgt` BETWEEN 5 AND 6 THEN `rgt` + 4 - 5 ELSE `rgt` END, `parent_id` = CASE WHEN id = 24 THEN 22 ELSE `parent_id` END [0m
+  [1m[35mSQL (0.1ms)[0m  COMMIT
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 22) LIMIT 1[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 24) LIMIT 1
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT `categories`.* FROM `categories` WHERE (`categories`.`id` = 22) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT COUNT(*) AS count_id FROM `categories` WHERE (`categories`.parent_id = 22)
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM `categories`[0m
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` = BINARY 'Science') AND (`categories`.`parent_id` IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT MAX(`categories`.`rgt`) AS max_id FROM `categories`
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `categories` (`created_at`, `description`, `lft`, `name`, `parent_id`, `rgt`, `updated_at`) VALUES ('2010-08-11 17:38:41', 'A top level category to hold all sub-categories of Science.', 1, 'Science', NULL, 2, '2010-08-11 17:38:41')[0m
+  [1m[35mSQL (0.1ms)[0m  COMMIT
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` = BINARY 'Physics') AND (`categories`.`parent_id` IS NULL) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT MAX(`categories`.`rgt`) AS max_id FROM `categories`[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `categories` (`created_at`, `description`, `lft`, `name`, `parent_id`, `rgt`, `updated_at`) VALUES ('2010-08-11 17:38:41', 'A sub-category of Science.', 3, 'Physics', NULL, 4, '2010-08-11 17:38:41')
+  [1m[36mSQL (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.0ms)[0m  BEGIN
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 25) LIMIT 1[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 26) LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE `categories` SET `lft` = CASE WHEN `lft` BETWEEN 2 AND 2 THEN `lft` + 4 - 2 WHEN `lft` BETWEEN 3 AND 4 THEN `lft` + 2 - 3 ELSE `lft` END, `rgt` = CASE WHEN `rgt` BETWEEN 2 AND 2 THEN `rgt` + 4 - 2 WHEN `rgt` BETWEEN 3 AND 4 THEN `rgt` + 2 - 3 ELSE `rgt` END, `parent_id` = CASE WHEN id = 26 THEN 25 ELSE `parent_id` END [0m
+  [1m[35mSQL (0.1ms)[0m  COMMIT
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 25) LIMIT 1[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 26) LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` = BINARY 'Biology') AND (`categories`.`parent_id` IS NULL) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT MAX(`categories`.`rgt`) AS max_id FROM `categories`[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `categories` (`created_at`, `description`, `lft`, `name`, `parent_id`, `rgt`, `updated_at`) VALUES ('2010-08-11 17:38:41', 'A sub-category of Science.', 5, 'Biology', NULL, 6, '2010-08-11 17:38:41')
+  [1m[36mSQL (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 25) LIMIT 1[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 27) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE `categories` SET `lft` = CASE WHEN `lft` BETWEEN 4 AND 4 THEN `lft` + 6 - 4 WHEN `lft` BETWEEN 5 AND 6 THEN `lft` + 4 - 5 ELSE `lft` END, `rgt` = CASE WHEN `rgt` BETWEEN 4 AND 4 THEN `rgt` + 6 - 4 WHEN `rgt` BETWEEN 5 AND 6 THEN `rgt` + 4 - 5 ELSE `rgt` END, `parent_id` = CASE WHEN id = 27 THEN 25 ELSE `parent_id` END [0m
+  [1m[35mSQL (0.1ms)[0m  COMMIT
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 25) LIMIT 1[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 27) LIMIT 1
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT `categories`.* FROM `categories` WHERE (`categories`.`id` = 25) LIMIT 1[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT `categories`.`id`, `categories`.`name`, `categories`.`description`, `categories`.`parent_id`, `categories`.`lft`, `categories`.`rgt`, `categories`.`created_at`, `categories`.`updated_at` FROM `categories` WHERE (`categories`.parent_id = 25) ORDER BY `lft`
+  [1m[36mSQL (0.6ms)[0m  [1mDELETE FROM `categories`[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mCategory Load (0.4ms)[0m  [1mSELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` = BINARY 'Science') AND (`categories`.`parent_id` IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT MAX(`categories`.`rgt`) AS max_id FROM `categories`
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `categories` (`created_at`, `description`, `lft`, `name`, `parent_id`, `rgt`, `updated_at`) VALUES ('2010-08-11 17:38:41', 'A top level category to hold all sub-categories of Science.', 1, 'Science', NULL, 2, '2010-08-11 17:38:41')[0m
+  [1m[35mSQL (0.2ms)[0m  COMMIT
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` = BINARY 'Physics') AND (`categories`.`parent_id` IS NULL) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT MAX(`categories`.`rgt`) AS max_id FROM `categories`[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `categories` (`created_at`, `description`, `lft`, `name`, `parent_id`, `rgt`, `updated_at`) VALUES ('2010-08-11 17:38:41', 'A sub-category of Science.', 3, 'Physics', NULL, 4, '2010-08-11 17:38:41')
+  [1m[36mSQL (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.0ms)[0m  BEGIN
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 28) LIMIT 1[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 29) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE `categories` SET `lft` = CASE WHEN `lft` BETWEEN 2 AND 2 THEN `lft` + 4 - 2 WHEN `lft` BETWEEN 3 AND 4 THEN `lft` + 2 - 3 ELSE `lft` END, `rgt` = CASE WHEN `rgt` BETWEEN 2 AND 2 THEN `rgt` + 4 - 2 WHEN `rgt` BETWEEN 3 AND 4 THEN `rgt` + 2 - 3 ELSE `rgt` END, `parent_id` = CASE WHEN id = 29 THEN 28 ELSE `parent_id` END [0m
+  [1m[35mSQL (0.1ms)[0m  COMMIT
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 28) LIMIT 1[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 29) LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` = BINARY 'Biology') AND (`categories`.`parent_id` IS NULL) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT MAX(`categories`.`rgt`) AS max_id FROM `categories`[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `categories` (`created_at`, `description`, `lft`, `name`, `parent_id`, `rgt`, `updated_at`) VALUES ('2010-08-11 17:38:41', 'A sub-category of Science.', 5, 'Biology', NULL, 6, '2010-08-11 17:38:41')
+  [1m[36mSQL (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 28) LIMIT 1[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 30) LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE `categories` SET `lft` = CASE WHEN `lft` BETWEEN 4 AND 4 THEN `lft` + 6 - 4 WHEN `lft` BETWEEN 5 AND 6 THEN `lft` + 4 - 5 ELSE `lft` END, `rgt` = CASE WHEN `rgt` BETWEEN 4 AND 4 THEN `rgt` + 6 - 4 WHEN `rgt` BETWEEN 5 AND 6 THEN `rgt` + 4 - 5 ELSE `rgt` END, `parent_id` = CASE WHEN id = 30 THEN 28 ELSE `parent_id` END [0m
+  [1m[35mSQL (0.2ms)[0m  COMMIT
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 28) LIMIT 1[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 30) LIMIT 1
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT `categories`.* FROM `categories` WHERE (`categories`.`id` = 28) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` = BINARY 'Gravity') AND (`categories`.`parent_id` = 29) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT MAX(`categories`.`rgt`) AS max_id FROM `categories`
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `categories` (`created_at`, `description`, `lft`, `name`, `parent_id`, `rgt`, `updated_at`) VALUES ('2010-08-11 17:38:41', 'The physics of gravity.', 7, 'Gravity', 29, 8, '2010-08-11 17:38:41')[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT `categories`.* FROM `categories` WHERE (`categories`.`id` = 29) ORDER BY `lft` LIMIT 1
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 31) LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE `categories` SET `lft` = CASE WHEN `lft` BETWEEN 3 AND 6 THEN `lft` + 8 - 6 WHEN `lft` BETWEEN 7 AND 8 THEN `lft` + 3 - 7 ELSE `lft` END, `rgt` = CASE WHEN `rgt` BETWEEN 3 AND 6 THEN `rgt` + 8 - 6 WHEN `rgt` BETWEEN 7 AND 8 THEN `rgt` + 3 - 7 ELSE `rgt` END, `parent_id` = CASE WHEN id = 31 THEN 29 ELSE `parent_id` END 
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 29) LIMIT 1[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 31) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` = BINARY 'Thermodynamics') AND (`categories`.`parent_id` = 29) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT MAX(`categories`.`rgt`) AS max_id FROM `categories`
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `categories` (`created_at`, `description`, `lft`, `name`, `parent_id`, `rgt`, `updated_at`) VALUES ('2010-08-11 17:38:41', 'The physics of thermodynamics.', 9, 'Thermodynamics', 29, 10, '2010-08-11 17:38:41')[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT `categories`.* FROM `categories` WHERE (`categories`.`id` = 29) ORDER BY `lft` LIMIT 1
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 32) LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE `categories` SET `lft` = CASE WHEN `lft` BETWEEN 5 AND 8 THEN `lft` + 10 - 8 WHEN `lft` BETWEEN 9 AND 10 THEN `lft` + 5 - 9 ELSE `lft` END, `rgt` = CASE WHEN `rgt` BETWEEN 5 AND 8 THEN `rgt` + 10 - 8 WHEN `rgt` BETWEEN 9 AND 10 THEN `rgt` + 5 - 9 ELSE `rgt` END, `parent_id` = CASE WHEN id = 32 THEN 29 ELSE `parent_id` END 
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 29) LIMIT 1[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 32) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT COUNT(*) AS count_id FROM `categories` WHERE (`categories`.`lft` <= 2 AND `categories`.`rgt` >= 3) AND (`categories`.id != 29)
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT COUNT(*) AS count_id FROM `categories` WHERE (`categories`.parent_id = 29)[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) AS count_id FROM `categories` WHERE (`categories`.`parent_id` = 29)
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT `categories`.* FROM `categories` WHERE (`categories`.`parent_id` IS NULL) ORDER BY `lft` LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT COUNT(*) AS count_id FROM `categories` WHERE (`categories`.`lft` >= 1 AND `categories`.`rgt` <= 10) AND (`categories`.id != 28)
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT `categories`.* FROM `categories` WHERE (`categories`.`parent_id` IS NULL) ORDER BY `lft` LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT COUNT(*) AS count_id FROM `categories` WHERE (`categories`.`lft` >= 1 AND `categories`.`rgt` <= 10) AND (`categories`.id != 28) AND (`categories`.`rgt` - `categories`.`lft` = 1)
+  [1m[36mSQL (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.7ms)[0m  describe `resources`
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO `resources` (`author`, `content_type`, `created_at`, `description`, `language`, `notes`, `title`, `updated_at`, `url`) VALUES ('An Author', 'text/html', '2010-08-11 17:38:41', 'description', 'english', 'notes', 'title', '2010-08-11 17:38:41', 'http://www.url.com')[0m
+  [1m[35mSQL (0.1ms)[0m  COMMIT
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  ROLLBACK
+  [1m[36mSQL (0.6ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.8ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+Migrating to ResorcerTotalMigrations (20100811083909)
+  [1m[35mSQL (0.6ms)[0m  DELETE FROM `categories`
+WARNING: Can't mass-assign protected attributes: lft, rgt
+  [1m[36mCategory Load (1.2ms)[0m  [1mSELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` = BINARY 'valid category') AND (`categories`.`parent_id` = 0) LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  DELETE FROM `categories`
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` IS NULL) AND (`categories`.`parent_id` IS NULL) LIMIT 1[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` IS NULL) AND (`categories`.`parent_id` IS NULL) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM `categories`[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` = BINARY 'Science') AND (`categories`.`parent_id` IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT MAX(`categories`.`rgt`) AS max_id FROM `categories`
+  [1m[36mSQL (1.7ms)[0m  [1mdescribe `categories`[0m
+  [1m[35mSQL (1.1ms)[0m  INSERT INTO `categories` (`created_at`, `description`, `lft`, `name`, `parent_id`, `rgt`, `updated_at`) VALUES ('2010-08-11 17:39:02', 'A top level category to hold all sub-categories of Science.', 1, 'Science', NULL, 2, '2010-08-11 17:39:02')
+  [1m[36mSQL (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35mCategory Load (0.3ms)[0m  SELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` = BINARY 'Science') AND (`categories`.`parent_id` = 33) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM `categories`[0m
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` = BINARY 'Science') AND (`categories`.`parent_id` IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT MAX(`categories`.`rgt`) AS max_id FROM `categories`
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `categories` (`created_at`, `description`, `lft`, `name`, `parent_id`, `rgt`, `updated_at`) VALUES ('2010-08-11 17:39:02', 'A top level category to hold all sub-categories of Science.', 1, 'Science', NULL, 2, '2010-08-11 17:39:02')[0m
+  [1m[35mSQL (0.0ms)[0m  COMMIT
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` = BINARY 'Science') AND (`categories`.`parent_id` IS NULL) LIMIT 1[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` = BINARY 'Science') AND (`categories`.`parent_id` IS NULL) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM `categories`[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` = BINARY 'Science') AND (`categories`.`parent_id` IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  SELECT MAX(`categories`.`rgt`) AS max_id FROM `categories`
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `categories` (`created_at`, `description`, `lft`, `name`, `parent_id`, `rgt`, `updated_at`) VALUES ('2010-08-11 17:39:02', 'A top level category to hold all sub-categories of Science.', 1, 'Science', NULL, 2, '2010-08-11 17:39:02')[0m
+  [1m[35mSQL (0.1ms)[0m  COMMIT
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` = BINARY 'Physics') AND (`categories`.`parent_id` IS NULL) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT MAX(`categories`.`rgt`) AS max_id FROM `categories`[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `categories` (`created_at`, `description`, `lft`, `name`, `parent_id`, `rgt`, `updated_at`) VALUES ('2010-08-11 17:39:02', 'A sub-category of Science.', 3, 'Physics', NULL, 4, '2010-08-11 17:39:02')
+  [1m[36mSQL (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 35) LIMIT 1[0m
+  [1m[35mCategory Load (0.3ms)[0m  SELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 36) LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE `categories` SET `lft` = CASE WHEN `lft` BETWEEN 2 AND 2 THEN `lft` + 4 - 2 WHEN `lft` BETWEEN 3 AND 4 THEN `lft` + 2 - 3 ELSE `lft` END, `rgt` = CASE WHEN `rgt` BETWEEN 2 AND 2 THEN `rgt` + 4 - 2 WHEN `rgt` BETWEEN 3 AND 4 THEN `rgt` + 2 - 3 ELSE `rgt` END, `parent_id` = CASE WHEN id = 36 THEN 35 ELSE `parent_id` END [0m
+  [1m[35mSQL (0.2ms)[0m  COMMIT
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 35) LIMIT 1[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 36) LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` = BINARY 'Biology') AND (`categories`.`parent_id` IS NULL) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT MAX(`categories`.`rgt`) AS max_id FROM `categories`[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `categories` (`created_at`, `description`, `lft`, `name`, `parent_id`, `rgt`, `updated_at`) VALUES ('2010-08-11 17:39:02', 'A sub-category of Science.', 5, 'Biology', NULL, 6, '2010-08-11 17:39:02')
+  [1m[36mSQL (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.0ms)[0m  BEGIN
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 35) LIMIT 1[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 37) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE `categories` SET `lft` = CASE WHEN `lft` BETWEEN 4 AND 4 THEN `lft` + 6 - 4 WHEN `lft` BETWEEN 5 AND 6 THEN `lft` + 4 - 5 ELSE `lft` END, `rgt` = CASE WHEN `rgt` BETWEEN 4 AND 4 THEN `rgt` + 6 - 4 WHEN `rgt` BETWEEN 5 AND 6 THEN `rgt` + 4 - 5 ELSE `rgt` END, `parent_id` = CASE WHEN id = 37 THEN 35 ELSE `parent_id` END [0m
+  [1m[35mSQL (0.1ms)[0m  COMMIT
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 35) LIMIT 1[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 37) LIMIT 1
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT `categories`.* FROM `categories` WHERE (`categories`.`id` = 35) LIMIT 1[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT `categories`.* FROM `categories` WHERE (`categories`.`parent_id` IS NULL) ORDER BY `lft` LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM `categories`[0m
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` = BINARY 'Science') AND (`categories`.`parent_id` IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT MAX(`categories`.`rgt`) AS max_id FROM `categories`
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `categories` (`created_at`, `description`, `lft`, `name`, `parent_id`, `rgt`, `updated_at`) VALUES ('2010-08-11 17:39:02', 'A top level category to hold all sub-categories of Science.', 1, 'Science', NULL, 2, '2010-08-11 17:39:02')[0m
+  [1m[35mSQL (0.2ms)[0m  COMMIT
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mCategory Load (0.3ms)[0m  SELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` = BINARY 'Physics') AND (`categories`.`parent_id` IS NULL) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT MAX(`categories`.`rgt`) AS max_id FROM `categories`[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO `categories` (`created_at`, `description`, `lft`, `name`, `parent_id`, `rgt`, `updated_at`) VALUES ('2010-08-11 17:39:02', 'A sub-category of Science.', 3, 'Physics', NULL, 4, '2010-08-11 17:39:02')
+  [1m[36mSQL (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.0ms)[0m  BEGIN
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 38) LIMIT 1[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 39) LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE `categories` SET `lft` = CASE WHEN `lft` BETWEEN 2 AND 2 THEN `lft` + 4 - 2 WHEN `lft` BETWEEN 3 AND 4 THEN `lft` + 2 - 3 ELSE `lft` END, `rgt` = CASE WHEN `rgt` BETWEEN 2 AND 2 THEN `rgt` + 4 - 2 WHEN `rgt` BETWEEN 3 AND 4 THEN `rgt` + 2 - 3 ELSE `rgt` END, `parent_id` = CASE WHEN id = 39 THEN 38 ELSE `parent_id` END [0m
+  [1m[35mSQL (0.1ms)[0m  COMMIT
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 38) LIMIT 1[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 39) LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mCategory Load (0.3ms)[0m  SELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` = BINARY 'Biology') AND (`categories`.`parent_id` IS NULL) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT MAX(`categories`.`rgt`) AS max_id FROM `categories`[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO `categories` (`created_at`, `description`, `lft`, `name`, `parent_id`, `rgt`, `updated_at`) VALUES ('2010-08-11 17:39:02', 'A sub-category of Science.', 5, 'Biology', NULL, 6, '2010-08-11 17:39:02')
+  [1m[36mSQL (0.0ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.0ms)[0m  BEGIN
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 38) LIMIT 1[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 40) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE `categories` SET `lft` = CASE WHEN `lft` BETWEEN 4 AND 4 THEN `lft` + 6 - 4 WHEN `lft` BETWEEN 5 AND 6 THEN `lft` + 4 - 5 ELSE `lft` END, `rgt` = CASE WHEN `rgt` BETWEEN 4 AND 4 THEN `rgt` + 6 - 4 WHEN `rgt` BETWEEN 5 AND 6 THEN `rgt` + 4 - 5 ELSE `rgt` END, `parent_id` = CASE WHEN id = 40 THEN 38 ELSE `parent_id` END [0m
+  [1m[35mSQL (0.0ms)[0m  COMMIT
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 38) LIMIT 1[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 40) LIMIT 1
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT `categories`.* FROM `categories` WHERE (`categories`.`id` = 38) LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT COUNT(*) AS count_id FROM `categories` WHERE (`categories`.parent_id = 38)
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM `categories`[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` = BINARY 'Science') AND (`categories`.`parent_id` IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT MAX(`categories`.`rgt`) AS max_id FROM `categories`
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `categories` (`created_at`, `description`, `lft`, `name`, `parent_id`, `rgt`, `updated_at`) VALUES ('2010-08-11 17:39:02', 'A top level category to hold all sub-categories of Science.', 1, 'Science', NULL, 2, '2010-08-11 17:39:02')[0m
+  [1m[35mSQL (0.2ms)[0m  COMMIT
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` = BINARY 'Physics') AND (`categories`.`parent_id` IS NULL) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT MAX(`categories`.`rgt`) AS max_id FROM `categories`[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `categories` (`created_at`, `description`, `lft`, `name`, `parent_id`, `rgt`, `updated_at`) VALUES ('2010-08-11 17:39:02', 'A sub-category of Science.', 3, 'Physics', NULL, 4, '2010-08-11 17:39:02')
+  [1m[36mSQL (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.0ms)[0m  BEGIN
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 41) LIMIT 1[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 42) LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE `categories` SET `lft` = CASE WHEN `lft` BETWEEN 2 AND 2 THEN `lft` + 4 - 2 WHEN `lft` BETWEEN 3 AND 4 THEN `lft` + 2 - 3 ELSE `lft` END, `rgt` = CASE WHEN `rgt` BETWEEN 2 AND 2 THEN `rgt` + 4 - 2 WHEN `rgt` BETWEEN 3 AND 4 THEN `rgt` + 2 - 3 ELSE `rgt` END, `parent_id` = CASE WHEN id = 42 THEN 41 ELSE `parent_id` END [0m
+  [1m[35mSQL (0.1ms)[0m  COMMIT
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 41) LIMIT 1[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 42) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` = BINARY 'Biology') AND (`categories`.`parent_id` IS NULL) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT MAX(`categories`.`rgt`) AS max_id FROM `categories`[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `categories` (`created_at`, `description`, `lft`, `name`, `parent_id`, `rgt`, `updated_at`) VALUES ('2010-08-11 17:39:02', 'A sub-category of Science.', 5, 'Biology', NULL, 6, '2010-08-11 17:39:02')
+  [1m[36mSQL (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 41) LIMIT 1[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 43) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE `categories` SET `lft` = CASE WHEN `lft` BETWEEN 4 AND 4 THEN `lft` + 6 - 4 WHEN `lft` BETWEEN 5 AND 6 THEN `lft` + 4 - 5 ELSE `lft` END, `rgt` = CASE WHEN `rgt` BETWEEN 4 AND 4 THEN `rgt` + 6 - 4 WHEN `rgt` BETWEEN 5 AND 6 THEN `rgt` + 4 - 5 ELSE `rgt` END, `parent_id` = CASE WHEN id = 43 THEN 41 ELSE `parent_id` END [0m
+  [1m[35mSQL (0.1ms)[0m  COMMIT
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 41) LIMIT 1[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 43) LIMIT 1
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT `categories`.* FROM `categories` WHERE (`categories`.`id` = 41) LIMIT 1[0m
+  [1m[35mCategory Load (0.3ms)[0m  SELECT `categories`.`id`, `categories`.`name`, `categories`.`description`, `categories`.`parent_id`, `categories`.`lft`, `categories`.`rgt`, `categories`.`created_at`, `categories`.`updated_at` FROM `categories` WHERE (`categories`.parent_id = 41) ORDER BY `lft`
+  [1m[36mSQL (0.5ms)[0m  [1mDELETE FROM `categories`[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mCategory Load (0.4ms)[0m  [1mSELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` = BINARY 'Science') AND (`categories`.`parent_id` IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT MAX(`categories`.`rgt`) AS max_id FROM `categories`
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `categories` (`created_at`, `description`, `lft`, `name`, `parent_id`, `rgt`, `updated_at`) VALUES ('2010-08-11 17:39:02', 'A top level category to hold all sub-categories of Science.', 1, 'Science', NULL, 2, '2010-08-11 17:39:02')[0m
+  [1m[35mSQL (0.2ms)[0m  COMMIT
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` = BINARY 'Physics') AND (`categories`.`parent_id` IS NULL) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT MAX(`categories`.`rgt`) AS max_id FROM `categories`[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `categories` (`created_at`, `description`, `lft`, `name`, `parent_id`, `rgt`, `updated_at`) VALUES ('2010-08-11 17:39:02', 'A sub-category of Science.', 3, 'Physics', NULL, 4, '2010-08-11 17:39:02')
+  [1m[36mSQL (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.0ms)[0m  BEGIN
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 44) LIMIT 1[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 45) LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE `categories` SET `lft` = CASE WHEN `lft` BETWEEN 2 AND 2 THEN `lft` + 4 - 2 WHEN `lft` BETWEEN 3 AND 4 THEN `lft` + 2 - 3 ELSE `lft` END, `rgt` = CASE WHEN `rgt` BETWEEN 2 AND 2 THEN `rgt` + 4 - 2 WHEN `rgt` BETWEEN 3 AND 4 THEN `rgt` + 2 - 3 ELSE `rgt` END, `parent_id` = CASE WHEN id = 45 THEN 44 ELSE `parent_id` END [0m
+  [1m[35mSQL (0.1ms)[0m  COMMIT
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 44) LIMIT 1[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 45) LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` = BINARY 'Biology') AND (`categories`.`parent_id` IS NULL) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT MAX(`categories`.`rgt`) AS max_id FROM `categories`[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `categories` (`created_at`, `description`, `lft`, `name`, `parent_id`, `rgt`, `updated_at`) VALUES ('2010-08-11 17:39:02', 'A sub-category of Science.', 5, 'Biology', NULL, 6, '2010-08-11 17:39:02')
+  [1m[36mSQL (0.0ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.0ms)[0m  BEGIN
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 44) LIMIT 1[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 46) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE `categories` SET `lft` = CASE WHEN `lft` BETWEEN 4 AND 4 THEN `lft` + 6 - 4 WHEN `lft` BETWEEN 5 AND 6 THEN `lft` + 4 - 5 ELSE `lft` END, `rgt` = CASE WHEN `rgt` BETWEEN 4 AND 4 THEN `rgt` + 6 - 4 WHEN `rgt` BETWEEN 5 AND 6 THEN `rgt` + 4 - 5 ELSE `rgt` END, `parent_id` = CASE WHEN id = 46 THEN 44 ELSE `parent_id` END [0m
+  [1m[35mSQL (0.1ms)[0m  COMMIT
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 44) LIMIT 1[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 46) LIMIT 1
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT `categories`.* FROM `categories` WHERE (`categories`.`id` = 44) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` = BINARY 'Gravity') AND (`categories`.`parent_id` = 45) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT MAX(`categories`.`rgt`) AS max_id FROM `categories`
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `categories` (`created_at`, `description`, `lft`, `name`, `parent_id`, `rgt`, `updated_at`) VALUES ('2010-08-11 17:39:02', 'The physics of gravity.', 7, 'Gravity', 45, 8, '2010-08-11 17:39:02')[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT `categories`.* FROM `categories` WHERE (`categories`.`id` = 45) ORDER BY `lft` LIMIT 1
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 47) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE `categories` SET `lft` = CASE WHEN `lft` BETWEEN 3 AND 6 THEN `lft` + 8 - 6 WHEN `lft` BETWEEN 7 AND 8 THEN `lft` + 3 - 7 ELSE `lft` END, `rgt` = CASE WHEN `rgt` BETWEEN 3 AND 6 THEN `rgt` + 8 - 6 WHEN `rgt` BETWEEN 7 AND 8 THEN `rgt` + 3 - 7 ELSE `rgt` END, `parent_id` = CASE WHEN id = 47 THEN 45 ELSE `parent_id` END 
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 45) LIMIT 1[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 47) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.0ms)[0m  BEGIN
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` = BINARY 'Thermodynamics') AND (`categories`.`parent_id` = 45) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT MAX(`categories`.`rgt`) AS max_id FROM `categories`
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `categories` (`created_at`, `description`, `lft`, `name`, `parent_id`, `rgt`, `updated_at`) VALUES ('2010-08-11 17:39:02', 'The physics of thermodynamics.', 9, 'Thermodynamics', 45, 10, '2010-08-11 17:39:02')[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT `categories`.* FROM `categories` WHERE (`categories`.`id` = 45) ORDER BY `lft` LIMIT 1
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 48) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE `categories` SET `lft` = CASE WHEN `lft` BETWEEN 5 AND 8 THEN `lft` + 10 - 8 WHEN `lft` BETWEEN 9 AND 10 THEN `lft` + 5 - 9 ELSE `lft` END, `rgt` = CASE WHEN `rgt` BETWEEN 5 AND 8 THEN `rgt` + 10 - 8 WHEN `rgt` BETWEEN 9 AND 10 THEN `rgt` + 5 - 9 ELSE `rgt` END, `parent_id` = CASE WHEN id = 48 THEN 45 ELSE `parent_id` END 
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 45) LIMIT 1[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 48) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT COUNT(*) AS count_id FROM `categories` WHERE (`categories`.`lft` <= 2 AND `categories`.`rgt` >= 3) AND (`categories`.id != 45)
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT COUNT(*) AS count_id FROM `categories` WHERE (`categories`.parent_id = 45)[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT COUNT(*) AS count_id FROM `categories` WHERE (`categories`.`parent_id` = 45)
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT `categories`.* FROM `categories` WHERE (`categories`.`parent_id` IS NULL) ORDER BY `lft` LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT COUNT(*) AS count_id FROM `categories` WHERE (`categories`.`lft` >= 1 AND `categories`.`rgt` <= 10) AND (`categories`.id != 44)
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT `categories`.* FROM `categories` WHERE (`categories`.`parent_id` IS NULL) ORDER BY `lft` LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT COUNT(*) AS count_id FROM `categories` WHERE (`categories`.`lft` >= 1 AND `categories`.`rgt` <= 10) AND (`categories`.id != 44) AND (`categories`.`rgt` - `categories`.`lft` = 1)
+  [1m[36mSQL (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (2.5ms)[0m  describe `resources`
+  [1m[36mSQL (1.3ms)[0m  [1mINSERT INTO `resources` (`author`, `content_type`, `created_at`, `description`, `language`, `notes`, `title`, `updated_at`, `url`) VALUES ('An Author', 'text/html', '2010-08-11 17:39:03', 'description', 'english', 'notes', 'title', '2010-08-11 17:39:03', 'http://www.url.com')[0m
+  [1m[35mSQL (0.2ms)[0m  COMMIT
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  ROLLBACK
+  [1m[36mSQL (0.5ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.8ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+Migrating to ResorcerTotalMigrations (20100811083909)
+  [1m[35mSQL (0.5ms)[0m  DELETE FROM `categories`
+WARNING: Can't mass-assign protected attributes: lft, rgt
+  [1m[36mCategory Load (0.9ms)[0m  [1mSELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` = BINARY 'valid category') AND (`categories`.`parent_id` = 0) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM `categories`
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` IS NULL) AND (`categories`.`parent_id` IS NULL) LIMIT 1[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` IS NULL) AND (`categories`.`parent_id` IS NULL) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM `categories`[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` = BINARY 'Science') AND (`categories`.`parent_id` IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT MAX(`categories`.`rgt`) AS max_id FROM `categories`
+  [1m[36mSQL (1.6ms)[0m  [1mdescribe `categories`[0m
+  [1m[35mSQL (1.4ms)[0m  INSERT INTO `categories` (`created_at`, `description`, `lft`, `name`, `parent_id`, `rgt`, `updated_at`) VALUES ('2010-08-11 17:40:05', 'A top level category to hold all sub-categories of Science.', 1, 'Science', NULL, 2, '2010-08-11 17:40:05')
+  [1m[36mSQL (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35mCategory Load (0.4ms)[0m  SELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` = BINARY 'Science') AND (`categories`.`parent_id` = 49) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM `categories`[0m
+  [1m[35mSQL (0.0ms)[0m  BEGIN
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` = BINARY 'Science') AND (`categories`.`parent_id` IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT MAX(`categories`.`rgt`) AS max_id FROM `categories`
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `categories` (`created_at`, `description`, `lft`, `name`, `parent_id`, `rgt`, `updated_at`) VALUES ('2010-08-11 17:40:05', 'A top level category to hold all sub-categories of Science.', 1, 'Science', NULL, 2, '2010-08-11 17:40:05')[0m
+  [1m[35mSQL (0.2ms)[0m  COMMIT
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` = BINARY 'Science') AND (`categories`.`parent_id` IS NULL) LIMIT 1[0m
+  [1m[35mCategory Load (0.3ms)[0m  SELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` = BINARY 'Science') AND (`categories`.`parent_id` IS NULL) LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM `categories`[0m
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` = BINARY 'Science') AND (`categories`.`parent_id` IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT MAX(`categories`.`rgt`) AS max_id FROM `categories`
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `categories` (`created_at`, `description`, `lft`, `name`, `parent_id`, `rgt`, `updated_at`) VALUES ('2010-08-11 17:40:05', 'A top level category to hold all sub-categories of Science.', 1, 'Science', NULL, 2, '2010-08-11 17:40:05')[0m
+  [1m[35mSQL (0.2ms)[0m  COMMIT
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` = BINARY 'Physics') AND (`categories`.`parent_id` IS NULL) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT MAX(`categories`.`rgt`) AS max_id FROM `categories`[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO `categories` (`created_at`, `description`, `lft`, `name`, `parent_id`, `rgt`, `updated_at`) VALUES ('2010-08-11 17:40:05', 'A sub-category of Science.', 3, 'Physics', NULL, 4, '2010-08-11 17:40:05')
+  [1m[36mSQL (0.0ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.0ms)[0m  BEGIN
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 51) LIMIT 1[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 52) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE `categories` SET `lft` = CASE WHEN `lft` BETWEEN 2 AND 2 THEN `lft` + 4 - 2 WHEN `lft` BETWEEN 3 AND 4 THEN `lft` + 2 - 3 ELSE `lft` END, `rgt` = CASE WHEN `rgt` BETWEEN 2 AND 2 THEN `rgt` + 4 - 2 WHEN `rgt` BETWEEN 3 AND 4 THEN `rgt` + 2 - 3 ELSE `rgt` END, `parent_id` = CASE WHEN id = 52 THEN 51 ELSE `parent_id` END [0m
+  [1m[35mSQL (0.1ms)[0m  COMMIT
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 51) LIMIT 1[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 52) LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` = BINARY 'Biology') AND (`categories`.`parent_id` IS NULL) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT MAX(`categories`.`rgt`) AS max_id FROM `categories`[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `categories` (`created_at`, `description`, `lft`, `name`, `parent_id`, `rgt`, `updated_at`) VALUES ('2010-08-11 17:40:05', 'A sub-category of Science.', 5, 'Biology', NULL, 6, '2010-08-11 17:40:05')
+  [1m[36mSQL (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 51) LIMIT 1[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 53) LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE `categories` SET `lft` = CASE WHEN `lft` BETWEEN 4 AND 4 THEN `lft` + 6 - 4 WHEN `lft` BETWEEN 5 AND 6 THEN `lft` + 4 - 5 ELSE `lft` END, `rgt` = CASE WHEN `rgt` BETWEEN 4 AND 4 THEN `rgt` + 6 - 4 WHEN `rgt` BETWEEN 5 AND 6 THEN `rgt` + 4 - 5 ELSE `rgt` END, `parent_id` = CASE WHEN id = 53 THEN 51 ELSE `parent_id` END [0m
+  [1m[35mSQL (0.1ms)[0m  COMMIT
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 51) LIMIT 1[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 53) LIMIT 1
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT `categories`.* FROM `categories` WHERE (`categories`.`id` = 51) LIMIT 1[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT `categories`.* FROM `categories` WHERE (`categories`.`parent_id` IS NULL) ORDER BY `lft` LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM `categories`[0m
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` = BINARY 'Science') AND (`categories`.`parent_id` IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT MAX(`categories`.`rgt`) AS max_id FROM `categories`
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `categories` (`created_at`, `description`, `lft`, `name`, `parent_id`, `rgt`, `updated_at`) VALUES ('2010-08-11 17:40:05', 'A top level category to hold all sub-categories of Science.', 1, 'Science', NULL, 2, '2010-08-11 17:40:05')[0m
+  [1m[35mSQL (0.2ms)[0m  COMMIT
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` = BINARY 'Physics') AND (`categories`.`parent_id` IS NULL) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT MAX(`categories`.`rgt`) AS max_id FROM `categories`[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `categories` (`created_at`, `description`, `lft`, `name`, `parent_id`, `rgt`, `updated_at`) VALUES ('2010-08-11 17:40:05', 'A sub-category of Science.', 3, 'Physics', NULL, 4, '2010-08-11 17:40:05')
+  [1m[36mSQL (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 54) LIMIT 1[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 55) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE `categories` SET `lft` = CASE WHEN `lft` BETWEEN 2 AND 2 THEN `lft` + 4 - 2 WHEN `lft` BETWEEN 3 AND 4 THEN `lft` + 2 - 3 ELSE `lft` END, `rgt` = CASE WHEN `rgt` BETWEEN 2 AND 2 THEN `rgt` + 4 - 2 WHEN `rgt` BETWEEN 3 AND 4 THEN `rgt` + 2 - 3 ELSE `rgt` END, `parent_id` = CASE WHEN id = 55 THEN 54 ELSE `parent_id` END [0m
+  [1m[35mSQL (0.1ms)[0m  COMMIT
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 54) LIMIT 1[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 55) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` = BINARY 'Biology') AND (`categories`.`parent_id` IS NULL) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT MAX(`categories`.`rgt`) AS max_id FROM `categories`[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO `categories` (`created_at`, `description`, `lft`, `name`, `parent_id`, `rgt`, `updated_at`) VALUES ('2010-08-11 17:40:05', 'A sub-category of Science.', 5, 'Biology', NULL, 6, '2010-08-11 17:40:05')
+  [1m[36mSQL (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.0ms)[0m  BEGIN
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 54) LIMIT 1[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 56) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE `categories` SET `lft` = CASE WHEN `lft` BETWEEN 4 AND 4 THEN `lft` + 6 - 4 WHEN `lft` BETWEEN 5 AND 6 THEN `lft` + 4 - 5 ELSE `lft` END, `rgt` = CASE WHEN `rgt` BETWEEN 4 AND 4 THEN `rgt` + 6 - 4 WHEN `rgt` BETWEEN 5 AND 6 THEN `rgt` + 4 - 5 ELSE `rgt` END, `parent_id` = CASE WHEN id = 56 THEN 54 ELSE `parent_id` END [0m
+  [1m[35mSQL (0.0ms)[0m  COMMIT
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 54) LIMIT 1[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 56) LIMIT 1
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT `categories`.* FROM `categories` WHERE (`categories`.`id` = 54) LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT COUNT(*) AS count_id FROM `categories` WHERE (`categories`.parent_id = 54)
+  [1m[36mSQL (0.4ms)[0m  [1mDELETE FROM `categories`[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` = BINARY 'Science') AND (`categories`.`parent_id` IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT MAX(`categories`.`rgt`) AS max_id FROM `categories`
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `categories` (`created_at`, `description`, `lft`, `name`, `parent_id`, `rgt`, `updated_at`) VALUES ('2010-08-11 17:40:05', 'A top level category to hold all sub-categories of Science.', 1, 'Science', NULL, 2, '2010-08-11 17:40:05')[0m
+  [1m[35mSQL (0.1ms)[0m  COMMIT
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mCategory Load (0.3ms)[0m  SELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` = BINARY 'Physics') AND (`categories`.`parent_id` IS NULL) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT MAX(`categories`.`rgt`) AS max_id FROM `categories`[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `categories` (`created_at`, `description`, `lft`, `name`, `parent_id`, `rgt`, `updated_at`) VALUES ('2010-08-11 17:40:05', 'A sub-category of Science.', 3, 'Physics', NULL, 4, '2010-08-11 17:40:05')
+  [1m[36mSQL (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 57) LIMIT 1[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 58) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE `categories` SET `lft` = CASE WHEN `lft` BETWEEN 2 AND 2 THEN `lft` + 4 - 2 WHEN `lft` BETWEEN 3 AND 4 THEN `lft` + 2 - 3 ELSE `lft` END, `rgt` = CASE WHEN `rgt` BETWEEN 2 AND 2 THEN `rgt` + 4 - 2 WHEN `rgt` BETWEEN 3 AND 4 THEN `rgt` + 2 - 3 ELSE `rgt` END, `parent_id` = CASE WHEN id = 58 THEN 57 ELSE `parent_id` END [0m
+  [1m[35mSQL (0.1ms)[0m  COMMIT
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 57) LIMIT 1[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 58) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` = BINARY 'Biology') AND (`categories`.`parent_id` IS NULL) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT MAX(`categories`.`rgt`) AS max_id FROM `categories`[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO `categories` (`created_at`, `description`, `lft`, `name`, `parent_id`, `rgt`, `updated_at`) VALUES ('2010-08-11 17:40:05', 'A sub-category of Science.', 5, 'Biology', NULL, 6, '2010-08-11 17:40:05')
+  [1m[36mSQL (0.0ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.0ms)[0m  BEGIN
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 57) LIMIT 1[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 59) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE `categories` SET `lft` = CASE WHEN `lft` BETWEEN 4 AND 4 THEN `lft` + 6 - 4 WHEN `lft` BETWEEN 5 AND 6 THEN `lft` + 4 - 5 ELSE `lft` END, `rgt` = CASE WHEN `rgt` BETWEEN 4 AND 4 THEN `rgt` + 6 - 4 WHEN `rgt` BETWEEN 5 AND 6 THEN `rgt` + 4 - 5 ELSE `rgt` END, `parent_id` = CASE WHEN id = 59 THEN 57 ELSE `parent_id` END [0m
+  [1m[35mSQL (0.1ms)[0m  COMMIT
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 57) LIMIT 1[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 59) LIMIT 1
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT `categories`.* FROM `categories` WHERE (`categories`.`id` = 57) LIMIT 1[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT `categories`.`id`, `categories`.`name`, `categories`.`description`, `categories`.`parent_id`, `categories`.`lft`, `categories`.`rgt`, `categories`.`created_at`, `categories`.`updated_at` FROM `categories` WHERE (`categories`.parent_id = 57) ORDER BY `lft`
+  [1m[36mSQL (0.4ms)[0m  [1mDELETE FROM `categories`[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` = BINARY 'Science') AND (`categories`.`parent_id` IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT MAX(`categories`.`rgt`) AS max_id FROM `categories`
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `categories` (`created_at`, `description`, `lft`, `name`, `parent_id`, `rgt`, `updated_at`) VALUES ('2010-08-11 17:40:05', 'A top level category to hold all sub-categories of Science.', 1, 'Science', NULL, 2, '2010-08-11 17:40:05')[0m
+  [1m[35mSQL (0.1ms)[0m  COMMIT
+  [1m[36mSQL (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` = BINARY 'Physics') AND (`categories`.`parent_id` IS NULL) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT MAX(`categories`.`rgt`) AS max_id FROM `categories`[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO `categories` (`created_at`, `description`, `lft`, `name`, `parent_id`, `rgt`, `updated_at`) VALUES ('2010-08-11 17:40:05', 'A sub-category of Science.', 3, 'Physics', NULL, 4, '2010-08-11 17:40:05')
+  [1m[36mSQL (0.0ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.0ms)[0m  BEGIN
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 60) LIMIT 1[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 61) LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE `categories` SET `lft` = CASE WHEN `lft` BETWEEN 2 AND 2 THEN `lft` + 4 - 2 WHEN `lft` BETWEEN 3 AND 4 THEN `lft` + 2 - 3 ELSE `lft` END, `rgt` = CASE WHEN `rgt` BETWEEN 2 AND 2 THEN `rgt` + 4 - 2 WHEN `rgt` BETWEEN 3 AND 4 THEN `rgt` + 2 - 3 ELSE `rgt` END, `parent_id` = CASE WHEN id = 61 THEN 60 ELSE `parent_id` END [0m
+  [1m[35mSQL (0.1ms)[0m  COMMIT
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 60) LIMIT 1[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 61) LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` = BINARY 'Biology') AND (`categories`.`parent_id` IS NULL) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT MAX(`categories`.`rgt`) AS max_id FROM `categories`[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO `categories` (`created_at`, `description`, `lft`, `name`, `parent_id`, `rgt`, `updated_at`) VALUES ('2010-08-11 17:40:06', 'A sub-category of Science.', 5, 'Biology', NULL, 6, '2010-08-11 17:40:06')
+  [1m[36mSQL (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 60) LIMIT 1[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 62) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE `categories` SET `lft` = CASE WHEN `lft` BETWEEN 4 AND 4 THEN `lft` + 6 - 4 WHEN `lft` BETWEEN 5 AND 6 THEN `lft` + 4 - 5 ELSE `lft` END, `rgt` = CASE WHEN `rgt` BETWEEN 4 AND 4 THEN `rgt` + 6 - 4 WHEN `rgt` BETWEEN 5 AND 6 THEN `rgt` + 4 - 5 ELSE `rgt` END, `parent_id` = CASE WHEN id = 62 THEN 60 ELSE `parent_id` END [0m
+  [1m[35mSQL (0.1ms)[0m  COMMIT
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 60) LIMIT 1[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 62) LIMIT 1
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT `categories`.* FROM `categories` WHERE (`categories`.`id` = 60) LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  BEGIN
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` = BINARY 'Gravity') AND (`categories`.`parent_id` = 61) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT MAX(`categories`.`rgt`) AS max_id FROM `categories`
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `categories` (`created_at`, `description`, `lft`, `name`, `parent_id`, `rgt`, `updated_at`) VALUES ('2010-08-11 17:40:06', 'The physics of gravity.', 7, 'Gravity', 61, 8, '2010-08-11 17:40:06')[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT `categories`.* FROM `categories` WHERE (`categories`.`id` = 61) ORDER BY `lft` LIMIT 1
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 63) LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  UPDATE `categories` SET `lft` = CASE WHEN `lft` BETWEEN 3 AND 6 THEN `lft` + 8 - 6 WHEN `lft` BETWEEN 7 AND 8 THEN `lft` + 3 - 7 ELSE `lft` END, `rgt` = CASE WHEN `rgt` BETWEEN 3 AND 6 THEN `rgt` + 8 - 6 WHEN `rgt` BETWEEN 7 AND 8 THEN `rgt` + 3 - 7 ELSE `rgt` END, `parent_id` = CASE WHEN id = 63 THEN 61 ELSE `parent_id` END 
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 61) LIMIT 1[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 63) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` = BINARY 'Thermodynamics') AND (`categories`.`parent_id` = 61) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT MAX(`categories`.`rgt`) AS max_id FROM `categories`
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `categories` (`created_at`, `description`, `lft`, `name`, `parent_id`, `rgt`, `updated_at`) VALUES ('2010-08-11 17:40:06', 'The physics of thermodynamics.', 9, 'Thermodynamics', 61, 10, '2010-08-11 17:40:06')[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT `categories`.* FROM `categories` WHERE (`categories`.`id` = 61) ORDER BY `lft` LIMIT 1
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 64) LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  UPDATE `categories` SET `lft` = CASE WHEN `lft` BETWEEN 5 AND 8 THEN `lft` + 10 - 8 WHEN `lft` BETWEEN 9 AND 10 THEN `lft` + 5 - 9 ELSE `lft` END, `rgt` = CASE WHEN `rgt` BETWEEN 5 AND 8 THEN `rgt` + 10 - 8 WHEN `rgt` BETWEEN 9 AND 10 THEN `rgt` + 5 - 9 ELSE `rgt` END, `parent_id` = CASE WHEN id = 64 THEN 61 ELSE `parent_id` END 
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 61) LIMIT 1[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 64) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT COUNT(*) AS count_id FROM `categories` WHERE (`categories`.`lft` <= 2 AND `categories`.`rgt` >= 3) AND (`categories`.id != 61)
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT COUNT(*) AS count_id FROM `categories` WHERE (`categories`.parent_id = 61)[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT COUNT(*) AS count_id FROM `categories` WHERE (`categories`.`parent_id` = 61)
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT `categories`.* FROM `categories` WHERE (`categories`.`parent_id` IS NULL) ORDER BY `lft` LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) AS count_id FROM `categories` WHERE (`categories`.`lft` >= 1 AND `categories`.`rgt` <= 10) AND (`categories`.id != 60)
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT `categories`.* FROM `categories` WHERE (`categories`.`parent_id` IS NULL) ORDER BY `lft` LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT COUNT(*) AS count_id FROM `categories` WHERE (`categories`.`lft` >= 1 AND `categories`.`rgt` <= 10) AND (`categories`.id != 60) AND (`categories`.`rgt` - `categories`.`lft` = 1)
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (2.3ms)[0m  describe `resources`
+  [1m[36mSQL (2.2ms)[0m  [1mINSERT INTO `resources` (`author`, `content_type`, `created_at`, `description`, `language`, `notes`, `title`, `updated_at`, `url`) VALUES ('An Author', 'text/html', '2010-08-11 17:40:06', 'description', 'english', 'notes', 'title', '2010-08-11 17:40:06', 'http://www.url.com')[0m
+  [1m[35mSQL (0.1ms)[0m  COMMIT
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  ROLLBACK
+  [1m[36mSQL (0.5ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW TABLES
+  [1m[36mSQL (41.4ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+Migrating to ResorcerTotalMigrations (20100811083909)
+  [1m[35mSQL (0.4ms)[0m  DELETE FROM `categories`
+WARNING: Can't mass-assign protected attributes: lft, rgt
+  [1m[36mCategory Load (1.0ms)[0m  [1mSELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` = BINARY 'valid category') AND (`categories`.`parent_id` = 0) LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  DELETE FROM `categories`
+  [1m[36mCategory Load (0.4ms)[0m  [1mSELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` IS NULL) AND (`categories`.`parent_id` IS NULL) LIMIT 1[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` IS NULL) AND (`categories`.`parent_id` IS NULL) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM `categories`[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mCategory Load (0.5ms)[0m  [1mSELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` = BINARY 'Science') AND (`categories`.`parent_id` IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT MAX(`categories`.`rgt`) AS max_id FROM `categories`
+  [1m[36mSQL (1.7ms)[0m  [1mdescribe `categories`[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO `categories` (`created_at`, `description`, `lft`, `name`, `parent_id`, `rgt`, `updated_at`) VALUES ('2010-08-11 17:40:26', 'A top level category to hold all sub-categories of Science.', 1, 'Science', NULL, 2, '2010-08-11 17:40:26')
+  [1m[36mSQL (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35mCategory Load (0.4ms)[0m  SELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` = BINARY 'Science') AND (`categories`.`parent_id` = 65) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM `categories`[0m
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` = BINARY 'Science') AND (`categories`.`parent_id` IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT MAX(`categories`.`rgt`) AS max_id FROM `categories`
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `categories` (`created_at`, `description`, `lft`, `name`, `parent_id`, `rgt`, `updated_at`) VALUES ('2010-08-11 17:40:26', 'A top level category to hold all sub-categories of Science.', 1, 'Science', NULL, 2, '2010-08-11 17:40:26')[0m
+  [1m[35mSQL (0.1ms)[0m  COMMIT
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` = BINARY 'Science') AND (`categories`.`parent_id` IS NULL) LIMIT 1[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` = BINARY 'Science') AND (`categories`.`parent_id` IS NULL) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM `categories`[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` = BINARY 'Science') AND (`categories`.`parent_id` IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT MAX(`categories`.`rgt`) AS max_id FROM `categories`
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `categories` (`created_at`, `description`, `lft`, `name`, `parent_id`, `rgt`, `updated_at`) VALUES ('2010-08-11 17:40:26', 'A top level category to hold all sub-categories of Science.', 1, 'Science', NULL, 2, '2010-08-11 17:40:26')[0m
+  [1m[35mSQL (0.1ms)[0m  COMMIT
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` = BINARY 'Physics') AND (`categories`.`parent_id` IS NULL) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT MAX(`categories`.`rgt`) AS max_id FROM `categories`[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO `categories` (`created_at`, `description`, `lft`, `name`, `parent_id`, `rgt`, `updated_at`) VALUES ('2010-08-11 17:40:26', 'A sub-category of Science.', 3, 'Physics', NULL, 4, '2010-08-11 17:40:26')
+  [1m[36mSQL (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.0ms)[0m  BEGIN
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 67) LIMIT 1[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 68) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE `categories` SET `lft` = CASE WHEN `lft` BETWEEN 2 AND 2 THEN `lft` + 4 - 2 WHEN `lft` BETWEEN 3 AND 4 THEN `lft` + 2 - 3 ELSE `lft` END, `rgt` = CASE WHEN `rgt` BETWEEN 2 AND 2 THEN `rgt` + 4 - 2 WHEN `rgt` BETWEEN 3 AND 4 THEN `rgt` + 2 - 3 ELSE `rgt` END, `parent_id` = CASE WHEN id = 68 THEN 67 ELSE `parent_id` END [0m
+  [1m[35mSQL (0.1ms)[0m  COMMIT
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 67) LIMIT 1[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 68) LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` = BINARY 'Biology') AND (`categories`.`parent_id` IS NULL) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT MAX(`categories`.`rgt`) AS max_id FROM `categories`[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `categories` (`created_at`, `description`, `lft`, `name`, `parent_id`, `rgt`, `updated_at`) VALUES ('2010-08-11 17:40:26', 'A sub-category of Science.', 5, 'Biology', NULL, 6, '2010-08-11 17:40:26')
+  [1m[36mSQL (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 67) LIMIT 1[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 69) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE `categories` SET `lft` = CASE WHEN `lft` BETWEEN 4 AND 4 THEN `lft` + 6 - 4 WHEN `lft` BETWEEN 5 AND 6 THEN `lft` + 4 - 5 ELSE `lft` END, `rgt` = CASE WHEN `rgt` BETWEEN 4 AND 4 THEN `rgt` + 6 - 4 WHEN `rgt` BETWEEN 5 AND 6 THEN `rgt` + 4 - 5 ELSE `rgt` END, `parent_id` = CASE WHEN id = 69 THEN 67 ELSE `parent_id` END [0m
+  [1m[35mSQL (0.0ms)[0m  COMMIT
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 67) LIMIT 1[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 69) LIMIT 1
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT `categories`.* FROM `categories` WHERE (`categories`.`id` = 67) LIMIT 1[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT `categories`.* FROM `categories` WHERE (`categories`.`parent_id` IS NULL) ORDER BY `lft` LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mDELETE FROM `categories`[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` = BINARY 'Science') AND (`categories`.`parent_id` IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT MAX(`categories`.`rgt`) AS max_id FROM `categories`
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `categories` (`created_at`, `description`, `lft`, `name`, `parent_id`, `rgt`, `updated_at`) VALUES ('2010-08-11 17:40:26', 'A top level category to hold all sub-categories of Science.', 1, 'Science', NULL, 2, '2010-08-11 17:40:26')[0m
+  [1m[35mSQL (0.2ms)[0m  COMMIT
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mCategory Load (0.3ms)[0m  SELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` = BINARY 'Physics') AND (`categories`.`parent_id` IS NULL) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT MAX(`categories`.`rgt`) AS max_id FROM `categories`[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `categories` (`created_at`, `description`, `lft`, `name`, `parent_id`, `rgt`, `updated_at`) VALUES ('2010-08-11 17:40:26', 'A sub-category of Science.', 3, 'Physics', NULL, 4, '2010-08-11 17:40:26')
+  [1m[36mSQL (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 70) LIMIT 1[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 71) LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE `categories` SET `lft` = CASE WHEN `lft` BETWEEN 2 AND 2 THEN `lft` + 4 - 2 WHEN `lft` BETWEEN 3 AND 4 THEN `lft` + 2 - 3 ELSE `lft` END, `rgt` = CASE WHEN `rgt` BETWEEN 2 AND 2 THEN `rgt` + 4 - 2 WHEN `rgt` BETWEEN 3 AND 4 THEN `rgt` + 2 - 3 ELSE `rgt` END, `parent_id` = CASE WHEN id = 71 THEN 70 ELSE `parent_id` END [0m
+  [1m[35mSQL (0.1ms)[0m  COMMIT
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 70) LIMIT 1[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 71) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mCategory Load (0.3ms)[0m  SELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` = BINARY 'Biology') AND (`categories`.`parent_id` IS NULL) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT MAX(`categories`.`rgt`) AS max_id FROM `categories`[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `categories` (`created_at`, `description`, `lft`, `name`, `parent_id`, `rgt`, `updated_at`) VALUES ('2010-08-11 17:40:26', 'A sub-category of Science.', 5, 'Biology', NULL, 6, '2010-08-11 17:40:26')
+  [1m[36mSQL (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.0ms)[0m  BEGIN
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 70) LIMIT 1[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 72) LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE `categories` SET `lft` = CASE WHEN `lft` BETWEEN 4 AND 4 THEN `lft` + 6 - 4 WHEN `lft` BETWEEN 5 AND 6 THEN `lft` + 4 - 5 ELSE `lft` END, `rgt` = CASE WHEN `rgt` BETWEEN 4 AND 4 THEN `rgt` + 6 - 4 WHEN `rgt` BETWEEN 5 AND 6 THEN `rgt` + 4 - 5 ELSE `rgt` END, `parent_id` = CASE WHEN id = 72 THEN 70 ELSE `parent_id` END [0m
+  [1m[35mSQL (0.1ms)[0m  COMMIT
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 70) LIMIT 1[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 72) LIMIT 1
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT `categories`.* FROM `categories` WHERE (`categories`.`id` = 70) LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT COUNT(*) AS count_id FROM `categories` WHERE (`categories`.parent_id = 70)
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM `categories`[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` = BINARY 'Science') AND (`categories`.`parent_id` IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT MAX(`categories`.`rgt`) AS max_id FROM `categories`
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `categories` (`created_at`, `description`, `lft`, `name`, `parent_id`, `rgt`, `updated_at`) VALUES ('2010-08-11 17:40:26', 'A top level category to hold all sub-categories of Science.', 1, 'Science', NULL, 2, '2010-08-11 17:40:26')[0m
+  [1m[35mSQL (0.1ms)[0m  COMMIT
+  [1m[36mSQL (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` = BINARY 'Physics') AND (`categories`.`parent_id` IS NULL) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT MAX(`categories`.`rgt`) AS max_id FROM `categories`[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `categories` (`created_at`, `description`, `lft`, `name`, `parent_id`, `rgt`, `updated_at`) VALUES ('2010-08-11 17:40:26', 'A sub-category of Science.', 3, 'Physics', NULL, 4, '2010-08-11 17:40:26')
+  [1m[36mSQL (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 73) LIMIT 1[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 74) LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE `categories` SET `lft` = CASE WHEN `lft` BETWEEN 2 AND 2 THEN `lft` + 4 - 2 WHEN `lft` BETWEEN 3 AND 4 THEN `lft` + 2 - 3 ELSE `lft` END, `rgt` = CASE WHEN `rgt` BETWEEN 2 AND 2 THEN `rgt` + 4 - 2 WHEN `rgt` BETWEEN 3 AND 4 THEN `rgt` + 2 - 3 ELSE `rgt` END, `parent_id` = CASE WHEN id = 74 THEN 73 ELSE `parent_id` END [0m
+  [1m[35mSQL (0.1ms)[0m  COMMIT
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 73) LIMIT 1[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 74) LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` = BINARY 'Biology') AND (`categories`.`parent_id` IS NULL) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT MAX(`categories`.`rgt`) AS max_id FROM `categories`[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO `categories` (`created_at`, `description`, `lft`, `name`, `parent_id`, `rgt`, `updated_at`) VALUES ('2010-08-11 17:40:26', 'A sub-category of Science.', 5, 'Biology', NULL, 6, '2010-08-11 17:40:26')
+  [1m[36mSQL (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.0ms)[0m  BEGIN
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 73) LIMIT 1[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 75) LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE `categories` SET `lft` = CASE WHEN `lft` BETWEEN 4 AND 4 THEN `lft` + 6 - 4 WHEN `lft` BETWEEN 5 AND 6 THEN `lft` + 4 - 5 ELSE `lft` END, `rgt` = CASE WHEN `rgt` BETWEEN 4 AND 4 THEN `rgt` + 6 - 4 WHEN `rgt` BETWEEN 5 AND 6 THEN `rgt` + 4 - 5 ELSE `rgt` END, `parent_id` = CASE WHEN id = 75 THEN 73 ELSE `parent_id` END [0m
+  [1m[35mSQL (0.1ms)[0m  COMMIT
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 73) LIMIT 1[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 75) LIMIT 1
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT `categories`.* FROM `categories` WHERE (`categories`.`id` = 73) LIMIT 1[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT `categories`.`id`, `categories`.`name`, `categories`.`description`, `categories`.`parent_id`, `categories`.`lft`, `categories`.`rgt`, `categories`.`created_at`, `categories`.`updated_at` FROM `categories` WHERE (`categories`.parent_id = 73) ORDER BY `lft`
+  [1m[36mSQL (0.4ms)[0m  [1mDELETE FROM `categories`[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mCategory Load (0.4ms)[0m  [1mSELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` = BINARY 'Science') AND (`categories`.`parent_id` IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT MAX(`categories`.`rgt`) AS max_id FROM `categories`
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `categories` (`created_at`, `description`, `lft`, `name`, `parent_id`, `rgt`, `updated_at`) VALUES ('2010-08-11 17:40:26', 'A top level category to hold all sub-categories of Science.', 1, 'Science', NULL, 2, '2010-08-11 17:40:26')[0m
+  [1m[35mSQL (0.1ms)[0m  COMMIT
+  [1m[36mSQL (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` = BINARY 'Physics') AND (`categories`.`parent_id` IS NULL) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT MAX(`categories`.`rgt`) AS max_id FROM `categories`[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO `categories` (`created_at`, `description`, `lft`, `name`, `parent_id`, `rgt`, `updated_at`) VALUES ('2010-08-11 17:40:26', 'A sub-category of Science.', 3, 'Physics', NULL, 4, '2010-08-11 17:40:26')
+  [1m[36mSQL (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 76) LIMIT 1[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 77) LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE `categories` SET `lft` = CASE WHEN `lft` BETWEEN 2 AND 2 THEN `lft` + 4 - 2 WHEN `lft` BETWEEN 3 AND 4 THEN `lft` + 2 - 3 ELSE `lft` END, `rgt` = CASE WHEN `rgt` BETWEEN 2 AND 2 THEN `rgt` + 4 - 2 WHEN `rgt` BETWEEN 3 AND 4 THEN `rgt` + 2 - 3 ELSE `rgt` END, `parent_id` = CASE WHEN id = 77 THEN 76 ELSE `parent_id` END [0m
+  [1m[35mSQL (0.2ms)[0m  COMMIT
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 76) LIMIT 1[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 77) LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` = BINARY 'Biology') AND (`categories`.`parent_id` IS NULL) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT MAX(`categories`.`rgt`) AS max_id FROM `categories`[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `categories` (`created_at`, `description`, `lft`, `name`, `parent_id`, `rgt`, `updated_at`) VALUES ('2010-08-11 17:40:26', 'A sub-category of Science.', 5, 'Biology', NULL, 6, '2010-08-11 17:40:26')
+  [1m[36mSQL (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 76) LIMIT 1[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 78) LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE `categories` SET `lft` = CASE WHEN `lft` BETWEEN 4 AND 4 THEN `lft` + 6 - 4 WHEN `lft` BETWEEN 5 AND 6 THEN `lft` + 4 - 5 ELSE `lft` END, `rgt` = CASE WHEN `rgt` BETWEEN 4 AND 4 THEN `rgt` + 6 - 4 WHEN `rgt` BETWEEN 5 AND 6 THEN `rgt` + 4 - 5 ELSE `rgt` END, `parent_id` = CASE WHEN id = 78 THEN 76 ELSE `parent_id` END [0m
+  [1m[35mSQL (0.1ms)[0m  COMMIT
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 76) LIMIT 1[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 78) LIMIT 1
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT `categories`.* FROM `categories` WHERE (`categories`.`id` = 76) LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  BEGIN
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` = BINARY 'Gravity') AND (`categories`.`parent_id` = 77) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT MAX(`categories`.`rgt`) AS max_id FROM `categories`
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `categories` (`created_at`, `description`, `lft`, `name`, `parent_id`, `rgt`, `updated_at`) VALUES ('2010-08-11 17:40:26', 'The physics of gravity.', 7, 'Gravity', 77, 8, '2010-08-11 17:40:26')[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT `categories`.* FROM `categories` WHERE (`categories`.`id` = 77) ORDER BY `lft` LIMIT 1
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 79) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE `categories` SET `lft` = CASE WHEN `lft` BETWEEN 3 AND 6 THEN `lft` + 8 - 6 WHEN `lft` BETWEEN 7 AND 8 THEN `lft` + 3 - 7 ELSE `lft` END, `rgt` = CASE WHEN `rgt` BETWEEN 3 AND 6 THEN `rgt` + 8 - 6 WHEN `rgt` BETWEEN 7 AND 8 THEN `rgt` + 3 - 7 ELSE `rgt` END, `parent_id` = CASE WHEN id = 79 THEN 77 ELSE `parent_id` END 
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 77) LIMIT 1[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 79) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.0ms)[0m  BEGIN
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` = BINARY 'Thermodynamics') AND (`categories`.`parent_id` = 77) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT MAX(`categories`.`rgt`) AS max_id FROM `categories`
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO `categories` (`created_at`, `description`, `lft`, `name`, `parent_id`, `rgt`, `updated_at`) VALUES ('2010-08-11 17:40:26', 'The physics of thermodynamics.', 9, 'Thermodynamics', 77, 10, '2010-08-11 17:40:26')[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT `categories`.* FROM `categories` WHERE (`categories`.`id` = 77) ORDER BY `lft` LIMIT 1
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 80) LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE `categories` SET `lft` = CASE WHEN `lft` BETWEEN 5 AND 8 THEN `lft` + 10 - 8 WHEN `lft` BETWEEN 9 AND 10 THEN `lft` + 5 - 9 ELSE `lft` END, `rgt` = CASE WHEN `rgt` BETWEEN 5 AND 8 THEN `rgt` + 10 - 8 WHEN `rgt` BETWEEN 9 AND 10 THEN `rgt` + 5 - 9 ELSE `rgt` END, `parent_id` = CASE WHEN id = 80 THEN 77 ELSE `parent_id` END 
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 77) LIMIT 1[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 80) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT COUNT(*) AS count_id FROM `categories` WHERE (`categories`.`lft` <= 2 AND `categories`.`rgt` >= 3) AND (`categories`.id != 77)
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) AS count_id FROM `categories` WHERE (`categories`.parent_id = 77)[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT COUNT(*) AS count_id FROM `categories` WHERE (`categories`.`parent_id` = 77)
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT `categories`.* FROM `categories` WHERE (`categories`.`parent_id` IS NULL) ORDER BY `lft` LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT COUNT(*) AS count_id FROM `categories` WHERE (`categories`.`lft` >= 1 AND `categories`.`rgt` <= 10) AND (`categories`.id != 76)
+  [1m[36mCategory Load (0.4ms)[0m  [1mSELECT `categories`.* FROM `categories` WHERE (`categories`.`parent_id` IS NULL) ORDER BY `lft` LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT COUNT(*) AS count_id FROM `categories` WHERE (`categories`.`lft` >= 1 AND `categories`.`rgt` <= 10) AND (`categories`.id != 76) AND (`categories`.`rgt` - `categories`.`lft` = 1)
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (2.3ms)[0m  describe `resources`
+  [1m[36mSQL (1.2ms)[0m  [1mINSERT INTO `resources` (`author`, `content_type`, `created_at`, `description`, `language`, `notes`, `title`, `updated_at`, `url`) VALUES ('An Author', 'text/html', '2010-08-11 17:40:26', 'description', 'english', 'notes', 'title', '2010-08-11 17:40:26', 'http://www.url.com')[0m
+  [1m[35mSQL (0.3ms)[0m  COMMIT
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  ROLLBACK
+  [1m[36mSQL (0.5ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW TABLES
+  [1m[36mSQL (35.5ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+Migrating to ResorcerTotalMigrations (20100811083909)
+  [1m[35mSQL (0.5ms)[0m  DELETE FROM `categories`
+WARNING: Can't mass-assign protected attributes: lft, rgt
+  [1m[36mCategory Load (0.7ms)[0m  [1mSELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` = BINARY 'valid category') AND (`categories`.`parent_id` = 0) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM `categories`
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` IS NULL) AND (`categories`.`parent_id` IS NULL) LIMIT 1[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` IS NULL) AND (`categories`.`parent_id` IS NULL) LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM `categories`[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` = BINARY 'Science') AND (`categories`.`parent_id` IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT MAX(`categories`.`rgt`) AS max_id FROM `categories`
+  [1m[36mSQL (1.6ms)[0m  [1mdescribe `categories`[0m
+  [1m[35mSQL (1.1ms)[0m  INSERT INTO `categories` (`created_at`, `description`, `lft`, `name`, `parent_id`, `rgt`, `updated_at`) VALUES ('2010-08-11 17:41:04', 'A top level category to hold all sub-categories of Science.', 1, 'Science', NULL, 2, '2010-08-11 17:41:04')
+  [1m[36mSQL (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35mCategory Load (0.3ms)[0m  SELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` = BINARY 'Science') AND (`categories`.`parent_id` = 81) LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mDELETE FROM `categories`[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` = BINARY 'Science') AND (`categories`.`parent_id` IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT MAX(`categories`.`rgt`) AS max_id FROM `categories`
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `categories` (`created_at`, `description`, `lft`, `name`, `parent_id`, `rgt`, `updated_at`) VALUES ('2010-08-11 17:41:04', 'A top level category to hold all sub-categories of Science.', 1, 'Science', NULL, 2, '2010-08-11 17:41:04')[0m
+  [1m[35mSQL (0.1ms)[0m  COMMIT
+  [1m[36mCategory Load (0.4ms)[0m  [1mSELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` = BINARY 'Science') AND (`categories`.`parent_id` IS NULL) LIMIT 1[0m
+  [1m[35mCategory Load (0.3ms)[0m  SELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` = BINARY 'Science') AND (`categories`.`parent_id` IS NULL) LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM `categories`[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` = BINARY 'Science') AND (`categories`.`parent_id` IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT MAX(`categories`.`rgt`) AS max_id FROM `categories`
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `categories` (`created_at`, `description`, `lft`, `name`, `parent_id`, `rgt`, `updated_at`) VALUES ('2010-08-11 17:41:04', 'A top level category to hold all sub-categories of Science.', 1, 'Science', NULL, 2, '2010-08-11 17:41:04')[0m
+  [1m[35mSQL (0.1ms)[0m  COMMIT
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mCategory Load (0.3ms)[0m  SELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` = BINARY 'Physics') AND (`categories`.`parent_id` IS NULL) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT MAX(`categories`.`rgt`) AS max_id FROM `categories`[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `categories` (`created_at`, `description`, `lft`, `name`, `parent_id`, `rgt`, `updated_at`) VALUES ('2010-08-11 17:41:04', 'A sub-category of Science.', 3, 'Physics', NULL, 4, '2010-08-11 17:41:04')
+  [1m[36mSQL (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 83) LIMIT 1[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 84) LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE `categories` SET `lft` = CASE WHEN `lft` BETWEEN 2 AND 2 THEN `lft` + 4 - 2 WHEN `lft` BETWEEN 3 AND 4 THEN `lft` + 2 - 3 ELSE `lft` END, `rgt` = CASE WHEN `rgt` BETWEEN 2 AND 2 THEN `rgt` + 4 - 2 WHEN `rgt` BETWEEN 3 AND 4 THEN `rgt` + 2 - 3 ELSE `rgt` END, `parent_id` = CASE WHEN id = 84 THEN 83 ELSE `parent_id` END [0m
+  [1m[35mSQL (0.1ms)[0m  COMMIT
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 83) LIMIT 1[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 84) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mCategory Load (0.3ms)[0m  SELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` = BINARY 'Biology') AND (`categories`.`parent_id` IS NULL) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT MAX(`categories`.`rgt`) AS max_id FROM `categories`[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `categories` (`created_at`, `description`, `lft`, `name`, `parent_id`, `rgt`, `updated_at`) VALUES ('2010-08-11 17:41:04', 'A sub-category of Science.', 5, 'Biology', NULL, 6, '2010-08-11 17:41:04')
+  [1m[36mSQL (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 83) LIMIT 1[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 85) LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE `categories` SET `lft` = CASE WHEN `lft` BETWEEN 4 AND 4 THEN `lft` + 6 - 4 WHEN `lft` BETWEEN 5 AND 6 THEN `lft` + 4 - 5 ELSE `lft` END, `rgt` = CASE WHEN `rgt` BETWEEN 4 AND 4 THEN `rgt` + 6 - 4 WHEN `rgt` BETWEEN 5 AND 6 THEN `rgt` + 4 - 5 ELSE `rgt` END, `parent_id` = CASE WHEN id = 85 THEN 83 ELSE `parent_id` END [0m
+  [1m[35mSQL (0.1ms)[0m  COMMIT
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 83) LIMIT 1[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 85) LIMIT 1
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT `categories`.* FROM `categories` WHERE (`categories`.`id` = 83) LIMIT 1[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT `categories`.* FROM `categories` WHERE (`categories`.`parent_id` IS NULL) ORDER BY `lft` LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mDELETE FROM `categories`[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` = BINARY 'Science') AND (`categories`.`parent_id` IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT MAX(`categories`.`rgt`) AS max_id FROM `categories`
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `categories` (`created_at`, `description`, `lft`, `name`, `parent_id`, `rgt`, `updated_at`) VALUES ('2010-08-11 17:41:04', 'A top level category to hold all sub-categories of Science.', 1, 'Science', NULL, 2, '2010-08-11 17:41:04')[0m
+  [1m[35mSQL (0.1ms)[0m  COMMIT
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mCategory Load (0.3ms)[0m  SELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` = BINARY 'Physics') AND (`categories`.`parent_id` IS NULL) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT MAX(`categories`.`rgt`) AS max_id FROM `categories`[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `categories` (`created_at`, `description`, `lft`, `name`, `parent_id`, `rgt`, `updated_at`) VALUES ('2010-08-11 17:41:04', 'A sub-category of Science.', 3, 'Physics', NULL, 4, '2010-08-11 17:41:04')
+  [1m[36mSQL (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 86) LIMIT 1[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 87) LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE `categories` SET `lft` = CASE WHEN `lft` BETWEEN 2 AND 2 THEN `lft` + 4 - 2 WHEN `lft` BETWEEN 3 AND 4 THEN `lft` + 2 - 3 ELSE `lft` END, `rgt` = CASE WHEN `rgt` BETWEEN 2 AND 2 THEN `rgt` + 4 - 2 WHEN `rgt` BETWEEN 3 AND 4 THEN `rgt` + 2 - 3 ELSE `rgt` END, `parent_id` = CASE WHEN id = 87 THEN 86 ELSE `parent_id` END [0m
+  [1m[35mSQL (0.1ms)[0m  COMMIT
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 86) LIMIT 1[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 87) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` = BINARY 'Biology') AND (`categories`.`parent_id` IS NULL) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT MAX(`categories`.`rgt`) AS max_id FROM `categories`[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `categories` (`created_at`, `description`, `lft`, `name`, `parent_id`, `rgt`, `updated_at`) VALUES ('2010-08-11 17:41:04', 'A sub-category of Science.', 5, 'Biology', NULL, 6, '2010-08-11 17:41:04')
+  [1m[36mSQL (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 86) LIMIT 1[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 88) LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE `categories` SET `lft` = CASE WHEN `lft` BETWEEN 4 AND 4 THEN `lft` + 6 - 4 WHEN `lft` BETWEEN 5 AND 6 THEN `lft` + 4 - 5 ELSE `lft` END, `rgt` = CASE WHEN `rgt` BETWEEN 4 AND 4 THEN `rgt` + 6 - 4 WHEN `rgt` BETWEEN 5 AND 6 THEN `rgt` + 4 - 5 ELSE `rgt` END, `parent_id` = CASE WHEN id = 88 THEN 86 ELSE `parent_id` END [0m
+  [1m[35mSQL (0.1ms)[0m  COMMIT
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 86) LIMIT 1[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 88) LIMIT 1
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT `categories`.* FROM `categories` WHERE (`categories`.`id` = 86) LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT COUNT(*) AS count_id FROM `categories` WHERE (`categories`.parent_id = 86)
+  [1m[36mSQL (0.4ms)[0m  [1mDELETE FROM `categories`[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` = BINARY 'Science') AND (`categories`.`parent_id` IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT MAX(`categories`.`rgt`) AS max_id FROM `categories`
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `categories` (`created_at`, `description`, `lft`, `name`, `parent_id`, `rgt`, `updated_at`) VALUES ('2010-08-11 17:41:04', 'A top level category to hold all sub-categories of Science.', 1, 'Science', NULL, 2, '2010-08-11 17:41:04')[0m
+  [1m[35mSQL (0.1ms)[0m  COMMIT
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mCategory Load (0.3ms)[0m  SELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` = BINARY 'Physics') AND (`categories`.`parent_id` IS NULL) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT MAX(`categories`.`rgt`) AS max_id FROM `categories`[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `categories` (`created_at`, `description`, `lft`, `name`, `parent_id`, `rgt`, `updated_at`) VALUES ('2010-08-11 17:41:04', 'A sub-category of Science.', 3, 'Physics', NULL, 4, '2010-08-11 17:41:04')
+  [1m[36mSQL (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 89) LIMIT 1[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 90) LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE `categories` SET `lft` = CASE WHEN `lft` BETWEEN 2 AND 2 THEN `lft` + 4 - 2 WHEN `lft` BETWEEN 3 AND 4 THEN `lft` + 2 - 3 ELSE `lft` END, `rgt` = CASE WHEN `rgt` BETWEEN 2 AND 2 THEN `rgt` + 4 - 2 WHEN `rgt` BETWEEN 3 AND 4 THEN `rgt` + 2 - 3 ELSE `rgt` END, `parent_id` = CASE WHEN id = 90 THEN 89 ELSE `parent_id` END [0m
+  [1m[35mSQL (0.1ms)[0m  COMMIT
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 89) LIMIT 1[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 90) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` = BINARY 'Biology') AND (`categories`.`parent_id` IS NULL) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT MAX(`categories`.`rgt`) AS max_id FROM `categories`[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `categories` (`created_at`, `description`, `lft`, `name`, `parent_id`, `rgt`, `updated_at`) VALUES ('2010-08-11 17:41:04', 'A sub-category of Science.', 5, 'Biology', NULL, 6, '2010-08-11 17:41:04')
+  [1m[36mSQL (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 89) LIMIT 1[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 91) LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE `categories` SET `lft` = CASE WHEN `lft` BETWEEN 4 AND 4 THEN `lft` + 6 - 4 WHEN `lft` BETWEEN 5 AND 6 THEN `lft` + 4 - 5 ELSE `lft` END, `rgt` = CASE WHEN `rgt` BETWEEN 4 AND 4 THEN `rgt` + 6 - 4 WHEN `rgt` BETWEEN 5 AND 6 THEN `rgt` + 4 - 5 ELSE `rgt` END, `parent_id` = CASE WHEN id = 91 THEN 89 ELSE `parent_id` END [0m
+  [1m[35mSQL (0.1ms)[0m  COMMIT
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 89) LIMIT 1[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 91) LIMIT 1
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT `categories`.* FROM `categories` WHERE (`categories`.`id` = 89) LIMIT 1[0m
+  [1m[35mCategory Load (0.3ms)[0m  SELECT `categories`.`id`, `categories`.`name`, `categories`.`description`, `categories`.`parent_id`, `categories`.`lft`, `categories`.`rgt`, `categories`.`created_at`, `categories`.`updated_at` FROM `categories` WHERE (`categories`.parent_id = 89) ORDER BY `lft`
+  [1m[36mSQL (0.5ms)[0m  [1mDELETE FROM `categories`[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mCategory Load (0.4ms)[0m  [1mSELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` = BINARY 'Science') AND (`categories`.`parent_id` IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT MAX(`categories`.`rgt`) AS max_id FROM `categories`
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `categories` (`created_at`, `description`, `lft`, `name`, `parent_id`, `rgt`, `updated_at`) VALUES ('2010-08-11 17:41:04', 'A top level category to hold all sub-categories of Science.', 1, 'Science', NULL, 2, '2010-08-11 17:41:04')[0m
+  [1m[35mSQL (0.1ms)[0m  COMMIT
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mCategory Load (0.3ms)[0m  SELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` = BINARY 'Physics') AND (`categories`.`parent_id` IS NULL) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT MAX(`categories`.`rgt`) AS max_id FROM `categories`[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `categories` (`created_at`, `description`, `lft`, `name`, `parent_id`, `rgt`, `updated_at`) VALUES ('2010-08-11 17:41:04', 'A sub-category of Science.', 3, 'Physics', NULL, 4, '2010-08-11 17:41:04')
+  [1m[36mSQL (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 92) LIMIT 1[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 93) LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE `categories` SET `lft` = CASE WHEN `lft` BETWEEN 2 AND 2 THEN `lft` + 4 - 2 WHEN `lft` BETWEEN 3 AND 4 THEN `lft` + 2 - 3 ELSE `lft` END, `rgt` = CASE WHEN `rgt` BETWEEN 2 AND 2 THEN `rgt` + 4 - 2 WHEN `rgt` BETWEEN 3 AND 4 THEN `rgt` + 2 - 3 ELSE `rgt` END, `parent_id` = CASE WHEN id = 93 THEN 92 ELSE `parent_id` END [0m
+  [1m[35mSQL (0.1ms)[0m  COMMIT
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 92) LIMIT 1[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 93) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mCategory Load (0.3ms)[0m  SELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` = BINARY 'Biology') AND (`categories`.`parent_id` IS NULL) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT MAX(`categories`.`rgt`) AS max_id FROM `categories`[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `categories` (`created_at`, `description`, `lft`, `name`, `parent_id`, `rgt`, `updated_at`) VALUES ('2010-08-11 17:41:04', 'A sub-category of Science.', 5, 'Biology', NULL, 6, '2010-08-11 17:41:04')
+  [1m[36mSQL (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 92) LIMIT 1[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 94) LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE `categories` SET `lft` = CASE WHEN `lft` BETWEEN 4 AND 4 THEN `lft` + 6 - 4 WHEN `lft` BETWEEN 5 AND 6 THEN `lft` + 4 - 5 ELSE `lft` END, `rgt` = CASE WHEN `rgt` BETWEEN 4 AND 4 THEN `rgt` + 6 - 4 WHEN `rgt` BETWEEN 5 AND 6 THEN `rgt` + 4 - 5 ELSE `rgt` END, `parent_id` = CASE WHEN id = 94 THEN 92 ELSE `parent_id` END [0m
+  [1m[35mSQL (0.1ms)[0m  COMMIT
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 92) LIMIT 1[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 94) LIMIT 1
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT `categories`.* FROM `categories` WHERE (`categories`.`id` = 92) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` = BINARY 'Gravity') AND (`categories`.`parent_id` = 93) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT MAX(`categories`.`rgt`) AS max_id FROM `categories`
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `categories` (`created_at`, `description`, `lft`, `name`, `parent_id`, `rgt`, `updated_at`) VALUES ('2010-08-11 17:41:04', 'The physics of gravity.', 7, 'Gravity', 93, 8, '2010-08-11 17:41:04')[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT `categories`.* FROM `categories` WHERE (`categories`.`id` = 93) ORDER BY `lft` LIMIT 1
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 95) LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE `categories` SET `lft` = CASE WHEN `lft` BETWEEN 3 AND 6 THEN `lft` + 8 - 6 WHEN `lft` BETWEEN 7 AND 8 THEN `lft` + 3 - 7 ELSE `lft` END, `rgt` = CASE WHEN `rgt` BETWEEN 3 AND 6 THEN `rgt` + 8 - 6 WHEN `rgt` BETWEEN 7 AND 8 THEN `rgt` + 3 - 7 ELSE `rgt` END, `parent_id` = CASE WHEN id = 95 THEN 93 ELSE `parent_id` END 
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 93) LIMIT 1[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 95) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` = BINARY 'Thermodynamics') AND (`categories`.`parent_id` = 93) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT MAX(`categories`.`rgt`) AS max_id FROM `categories`
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `categories` (`created_at`, `description`, `lft`, `name`, `parent_id`, `rgt`, `updated_at`) VALUES ('2010-08-11 17:41:04', 'The physics of thermodynamics.', 9, 'Thermodynamics', 93, 10, '2010-08-11 17:41:04')[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT `categories`.* FROM `categories` WHERE (`categories`.`id` = 93) ORDER BY `lft` LIMIT 1
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 96) LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE `categories` SET `lft` = CASE WHEN `lft` BETWEEN 5 AND 8 THEN `lft` + 10 - 8 WHEN `lft` BETWEEN 9 AND 10 THEN `lft` + 5 - 9 ELSE `lft` END, `rgt` = CASE WHEN `rgt` BETWEEN 5 AND 8 THEN `rgt` + 10 - 8 WHEN `rgt` BETWEEN 9 AND 10 THEN `rgt` + 5 - 9 ELSE `rgt` END, `parent_id` = CASE WHEN id = 96 THEN 93 ELSE `parent_id` END 
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 93) LIMIT 1[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 96) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT COUNT(*) AS count_id FROM `categories` WHERE (`categories`.`lft` <= 2 AND `categories`.`rgt` >= 3) AND (`categories`.id != 93)
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT COUNT(*) AS count_id FROM `categories` WHERE (`categories`.parent_id = 93)[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT COUNT(*) AS count_id FROM `categories` WHERE (`categories`.`parent_id` = 93)
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT `categories`.* FROM `categories` WHERE (`categories`.`parent_id` IS NULL) ORDER BY `lft` LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT COUNT(*) AS count_id FROM `categories` WHERE (`categories`.`lft` >= 1 AND `categories`.`rgt` <= 10) AND (`categories`.id != 92)
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT `categories`.* FROM `categories` WHERE (`categories`.`parent_id` IS NULL) ORDER BY `lft` LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT COUNT(*) AS count_id FROM `categories` WHERE (`categories`.`lft` >= 1 AND `categories`.`rgt` <= 10) AND (`categories`.id != 92) AND (`categories`.`rgt` - `categories`.`lft` = 1)
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.8ms)[0m  describe `resources`
+  [1m[36mSQL (1.5ms)[0m  [1mINSERT INTO `resources` (`author`, `content_type`, `created_at`, `description`, `language`, `notes`, `title`, `updated_at`, `url`) VALUES ('An Author', 'text/html', '2010-08-11 17:41:04', 'description', 'english', 'notes', 'title', '2010-08-11 17:41:04', 'http://www.url.com')[0m
+  [1m[35mSQL (0.1ms)[0m  COMMIT
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  ROLLBACK
+  [1m[36mSQL (0.5ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW TABLES
+  [1m[36mSQL (37.4ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+Migrating to ResorcerTotalMigrations (20100811083909)
+  [1m[35mSQL (0.4ms)[0m  DELETE FROM `categories`
+WARNING: Can't mass-assign protected attributes: lft, rgt
+  [1m[36mCategory Load (1.0ms)[0m  [1mSELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` = BINARY 'valid category') AND (`categories`.`parent_id` = 0) LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM `categories`
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` IS NULL) AND (`categories`.`parent_id` IS NULL) LIMIT 1[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` IS NULL) AND (`categories`.`parent_id` IS NULL) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM `categories`[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` = BINARY 'Science') AND (`categories`.`parent_id` IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT MAX(`categories`.`rgt`) AS max_id FROM `categories`
+  [1m[36mSQL (1.9ms)[0m  [1mdescribe `categories`[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO `categories` (`created_at`, `description`, `lft`, `name`, `parent_id`, `rgt`, `updated_at`) VALUES ('2010-08-11 17:41:26', 'A top level category to hold all sub-categories of Science.', 1, 'Science', NULL, 2, '2010-08-11 17:41:26')
+  [1m[36mSQL (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35mCategory Load (0.3ms)[0m  SELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` = BINARY 'Science') AND (`categories`.`parent_id` = 97) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM `categories`[0m
+  [1m[35mSQL (0.0ms)[0m  BEGIN
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` = BINARY 'Science') AND (`categories`.`parent_id` IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT MAX(`categories`.`rgt`) AS max_id FROM `categories`
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `categories` (`created_at`, `description`, `lft`, `name`, `parent_id`, `rgt`, `updated_at`) VALUES ('2010-08-11 17:41:26', 'A top level category to hold all sub-categories of Science.', 1, 'Science', NULL, 2, '2010-08-11 17:41:26')[0m
+  [1m[35mSQL (0.1ms)[0m  COMMIT
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` = BINARY 'Science') AND (`categories`.`parent_id` IS NULL) LIMIT 1[0m
+  [1m[35mCategory Load (0.3ms)[0m  SELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` = BINARY 'Science') AND (`categories`.`parent_id` IS NULL) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM `categories`[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mCategory Load (0.4ms)[0m  [1mSELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` = BINARY 'Science') AND (`categories`.`parent_id` IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT MAX(`categories`.`rgt`) AS max_id FROM `categories`
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `categories` (`created_at`, `description`, `lft`, `name`, `parent_id`, `rgt`, `updated_at`) VALUES ('2010-08-11 17:41:26', 'A top level category to hold all sub-categories of Science.', 1, 'Science', NULL, 2, '2010-08-11 17:41:26')[0m
+  [1m[35mSQL (0.2ms)[0m  COMMIT
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` = BINARY 'Physics') AND (`categories`.`parent_id` IS NULL) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT MAX(`categories`.`rgt`) AS max_id FROM `categories`[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `categories` (`created_at`, `description`, `lft`, `name`, `parent_id`, `rgt`, `updated_at`) VALUES ('2010-08-11 17:41:26', 'A sub-category of Science.', 3, 'Physics', NULL, 4, '2010-08-11 17:41:26')
+  [1m[36mSQL (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 99) LIMIT 1[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 100) LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE `categories` SET `lft` = CASE WHEN `lft` BETWEEN 2 AND 2 THEN `lft` + 4 - 2 WHEN `lft` BETWEEN 3 AND 4 THEN `lft` + 2 - 3 ELSE `lft` END, `rgt` = CASE WHEN `rgt` BETWEEN 2 AND 2 THEN `rgt` + 4 - 2 WHEN `rgt` BETWEEN 3 AND 4 THEN `rgt` + 2 - 3 ELSE `rgt` END, `parent_id` = CASE WHEN id = 100 THEN 99 ELSE `parent_id` END [0m
+  [1m[35mSQL (0.1ms)[0m  COMMIT
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 99) LIMIT 1[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 100) LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` = BINARY 'Biology') AND (`categories`.`parent_id` IS NULL) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT MAX(`categories`.`rgt`) AS max_id FROM `categories`[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO `categories` (`created_at`, `description`, `lft`, `name`, `parent_id`, `rgt`, `updated_at`) VALUES ('2010-08-11 17:41:26', 'A sub-category of Science.', 5, 'Biology', NULL, 6, '2010-08-11 17:41:26')
+  [1m[36mSQL (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.0ms)[0m  BEGIN
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 99) LIMIT 1[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 101) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE `categories` SET `lft` = CASE WHEN `lft` BETWEEN 4 AND 4 THEN `lft` + 6 - 4 WHEN `lft` BETWEEN 5 AND 6 THEN `lft` + 4 - 5 ELSE `lft` END, `rgt` = CASE WHEN `rgt` BETWEEN 4 AND 4 THEN `rgt` + 6 - 4 WHEN `rgt` BETWEEN 5 AND 6 THEN `rgt` + 4 - 5 ELSE `rgt` END, `parent_id` = CASE WHEN id = 101 THEN 99 ELSE `parent_id` END [0m
+  [1m[35mSQL (0.1ms)[0m  COMMIT
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 99) LIMIT 1[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 101) LIMIT 1
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT `categories`.* FROM `categories` WHERE (`categories`.`id` = 99) LIMIT 1[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT `categories`.* FROM `categories` WHERE (`categories`.`parent_id` IS NULL) ORDER BY `lft` LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM `categories`[0m
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  [1m[36mCategory Load (0.5ms)[0m  [1mSELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` = BINARY 'Science') AND (`categories`.`parent_id` IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT MAX(`categories`.`rgt`) AS max_id FROM `categories`
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `categories` (`created_at`, `description`, `lft`, `name`, `parent_id`, `rgt`, `updated_at`) VALUES ('2010-08-11 17:41:26', 'A top level category to hold all sub-categories of Science.', 1, 'Science', NULL, 2, '2010-08-11 17:41:26')[0m
+  [1m[35mSQL (0.2ms)[0m  COMMIT
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mCategory Load (0.3ms)[0m  SELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` = BINARY 'Physics') AND (`categories`.`parent_id` IS NULL) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT MAX(`categories`.`rgt`) AS max_id FROM `categories`[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `categories` (`created_at`, `description`, `lft`, `name`, `parent_id`, `rgt`, `updated_at`) VALUES ('2010-08-11 17:41:26', 'A sub-category of Science.', 3, 'Physics', NULL, 4, '2010-08-11 17:41:26')
+  [1m[36mSQL (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 102) LIMIT 1[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 103) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE `categories` SET `lft` = CASE WHEN `lft` BETWEEN 2 AND 2 THEN `lft` + 4 - 2 WHEN `lft` BETWEEN 3 AND 4 THEN `lft` + 2 - 3 ELSE `lft` END, `rgt` = CASE WHEN `rgt` BETWEEN 2 AND 2 THEN `rgt` + 4 - 2 WHEN `rgt` BETWEEN 3 AND 4 THEN `rgt` + 2 - 3 ELSE `rgt` END, `parent_id` = CASE WHEN id = 103 THEN 102 ELSE `parent_id` END [0m
+  [1m[35mSQL (0.1ms)[0m  COMMIT
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 102) LIMIT 1[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 103) LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` = BINARY 'Biology') AND (`categories`.`parent_id` IS NULL) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT MAX(`categories`.`rgt`) AS max_id FROM `categories`[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `categories` (`created_at`, `description`, `lft`, `name`, `parent_id`, `rgt`, `updated_at`) VALUES ('2010-08-11 17:41:26', 'A sub-category of Science.', 5, 'Biology', NULL, 6, '2010-08-11 17:41:26')
+  [1m[36mSQL (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.0ms)[0m  BEGIN
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 102) LIMIT 1[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 104) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE `categories` SET `lft` = CASE WHEN `lft` BETWEEN 4 AND 4 THEN `lft` + 6 - 4 WHEN `lft` BETWEEN 5 AND 6 THEN `lft` + 4 - 5 ELSE `lft` END, `rgt` = CASE WHEN `rgt` BETWEEN 4 AND 4 THEN `rgt` + 6 - 4 WHEN `rgt` BETWEEN 5 AND 6 THEN `rgt` + 4 - 5 ELSE `rgt` END, `parent_id` = CASE WHEN id = 104 THEN 102 ELSE `parent_id` END [0m
+  [1m[35mSQL (0.1ms)[0m  COMMIT
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 102) LIMIT 1[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 104) LIMIT 1
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT `categories`.* FROM `categories` WHERE (`categories`.`id` = 102) LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT COUNT(*) AS count_id FROM `categories` WHERE (`categories`.parent_id = 102)
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM `categories`[0m
+  [1m[35mSQL (0.0ms)[0m  BEGIN
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` = BINARY 'Science') AND (`categories`.`parent_id` IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT MAX(`categories`.`rgt`) AS max_id FROM `categories`
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `categories` (`created_at`, `description`, `lft`, `name`, `parent_id`, `rgt`, `updated_at`) VALUES ('2010-08-11 17:41:26', 'A top level category to hold all sub-categories of Science.', 1, 'Science', NULL, 2, '2010-08-11 17:41:26')[0m
+  [1m[35mSQL (0.2ms)[0m  COMMIT
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` = BINARY 'Physics') AND (`categories`.`parent_id` IS NULL) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT MAX(`categories`.`rgt`) AS max_id FROM `categories`[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `categories` (`created_at`, `description`, `lft`, `name`, `parent_id`, `rgt`, `updated_at`) VALUES ('2010-08-11 17:41:26', 'A sub-category of Science.', 3, 'Physics', NULL, 4, '2010-08-11 17:41:26')
+  [1m[36mSQL (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 105) LIMIT 1[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 106) LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE `categories` SET `lft` = CASE WHEN `lft` BETWEEN 2 AND 2 THEN `lft` + 4 - 2 WHEN `lft` BETWEEN 3 AND 4 THEN `lft` + 2 - 3 ELSE `lft` END, `rgt` = CASE WHEN `rgt` BETWEEN 2 AND 2 THEN `rgt` + 4 - 2 WHEN `rgt` BETWEEN 3 AND 4 THEN `rgt` + 2 - 3 ELSE `rgt` END, `parent_id` = CASE WHEN id = 106 THEN 105 ELSE `parent_id` END [0m
+  [1m[35mSQL (0.1ms)[0m  COMMIT
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 105) LIMIT 1[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 106) LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mCategory Load (0.3ms)[0m  SELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` = BINARY 'Biology') AND (`categories`.`parent_id` IS NULL) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT MAX(`categories`.`rgt`) AS max_id FROM `categories`[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `categories` (`created_at`, `description`, `lft`, `name`, `parent_id`, `rgt`, `updated_at`) VALUES ('2010-08-11 17:41:26', 'A sub-category of Science.', 5, 'Biology', NULL, 6, '2010-08-11 17:41:26')
+  [1m[36mSQL (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.0ms)[0m  BEGIN
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 105) LIMIT 1[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 107) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE `categories` SET `lft` = CASE WHEN `lft` BETWEEN 4 AND 4 THEN `lft` + 6 - 4 WHEN `lft` BETWEEN 5 AND 6 THEN `lft` + 4 - 5 ELSE `lft` END, `rgt` = CASE WHEN `rgt` BETWEEN 4 AND 4 THEN `rgt` + 6 - 4 WHEN `rgt` BETWEEN 5 AND 6 THEN `rgt` + 4 - 5 ELSE `rgt` END, `parent_id` = CASE WHEN id = 107 THEN 105 ELSE `parent_id` END [0m
+  [1m[35mSQL (0.1ms)[0m  COMMIT
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 105) LIMIT 1[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 107) LIMIT 1
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT `categories`.* FROM `categories` WHERE (`categories`.`id` = 105) LIMIT 1[0m
+  [1m[35mCategory Load (0.3ms)[0m  SELECT `categories`.`id`, `categories`.`name`, `categories`.`description`, `categories`.`parent_id`, `categories`.`lft`, `categories`.`rgt`, `categories`.`created_at`, `categories`.`updated_at` FROM `categories` WHERE (`categories`.parent_id = 105) ORDER BY `lft`
+  [1m[36mSQL (0.4ms)[0m  [1mDELETE FROM `categories`[0m
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  [1m[36mCategory Load (0.4ms)[0m  [1mSELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` = BINARY 'Science') AND (`categories`.`parent_id` IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT MAX(`categories`.`rgt`) AS max_id FROM `categories`
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `categories` (`created_at`, `description`, `lft`, `name`, `parent_id`, `rgt`, `updated_at`) VALUES ('2010-08-11 17:41:26', 'A top level category to hold all sub-categories of Science.', 1, 'Science', NULL, 2, '2010-08-11 17:41:26')[0m
+  [1m[35mSQL (0.1ms)[0m  COMMIT
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` = BINARY 'Physics') AND (`categories`.`parent_id` IS NULL) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT MAX(`categories`.`rgt`) AS max_id FROM `categories`[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `categories` (`created_at`, `description`, `lft`, `name`, `parent_id`, `rgt`, `updated_at`) VALUES ('2010-08-11 17:41:26', 'A sub-category of Science.', 3, 'Physics', NULL, 4, '2010-08-11 17:41:26')
+  [1m[36mSQL (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 108) LIMIT 1[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 109) LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE `categories` SET `lft` = CASE WHEN `lft` BETWEEN 2 AND 2 THEN `lft` + 4 - 2 WHEN `lft` BETWEEN 3 AND 4 THEN `lft` + 2 - 3 ELSE `lft` END, `rgt` = CASE WHEN `rgt` BETWEEN 2 AND 2 THEN `rgt` + 4 - 2 WHEN `rgt` BETWEEN 3 AND 4 THEN `rgt` + 2 - 3 ELSE `rgt` END, `parent_id` = CASE WHEN id = 109 THEN 108 ELSE `parent_id` END [0m
+  [1m[35mSQL (0.1ms)[0m  COMMIT
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 108) LIMIT 1[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 109) LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mCategory Load (0.3ms)[0m  SELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` = BINARY 'Biology') AND (`categories`.`parent_id` IS NULL) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT MAX(`categories`.`rgt`) AS max_id FROM `categories`[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `categories` (`created_at`, `description`, `lft`, `name`, `parent_id`, `rgt`, `updated_at`) VALUES ('2010-08-11 17:41:27', 'A sub-category of Science.', 5, 'Biology', NULL, 6, '2010-08-11 17:41:27')
+  [1m[36mSQL (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.0ms)[0m  BEGIN
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 108) LIMIT 1[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 110) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE `categories` SET `lft` = CASE WHEN `lft` BETWEEN 4 AND 4 THEN `lft` + 6 - 4 WHEN `lft` BETWEEN 5 AND 6 THEN `lft` + 4 - 5 ELSE `lft` END, `rgt` = CASE WHEN `rgt` BETWEEN 4 AND 4 THEN `rgt` + 6 - 4 WHEN `rgt` BETWEEN 5 AND 6 THEN `rgt` + 4 - 5 ELSE `rgt` END, `parent_id` = CASE WHEN id = 110 THEN 108 ELSE `parent_id` END [0m
+  [1m[35mSQL (0.0ms)[0m  COMMIT
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 108) LIMIT 1[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 110) LIMIT 1
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT `categories`.* FROM `categories` WHERE (`categories`.`id` = 108) LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  BEGIN
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` = BINARY 'Gravity') AND (`categories`.`parent_id` = 109) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT MAX(`categories`.`rgt`) AS max_id FROM `categories`
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `categories` (`created_at`, `description`, `lft`, `name`, `parent_id`, `rgt`, `updated_at`) VALUES ('2010-08-11 17:41:27', 'The physics of gravity.', 7, 'Gravity', 109, 8, '2010-08-11 17:41:27')[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT `categories`.* FROM `categories` WHERE (`categories`.`id` = 109) ORDER BY `lft` LIMIT 1
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 111) LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE `categories` SET `lft` = CASE WHEN `lft` BETWEEN 3 AND 6 THEN `lft` + 8 - 6 WHEN `lft` BETWEEN 7 AND 8 THEN `lft` + 3 - 7 ELSE `lft` END, `rgt` = CASE WHEN `rgt` BETWEEN 3 AND 6 THEN `rgt` + 8 - 6 WHEN `rgt` BETWEEN 7 AND 8 THEN `rgt` + 3 - 7 ELSE `rgt` END, `parent_id` = CASE WHEN id = 111 THEN 109 ELSE `parent_id` END 
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 109) LIMIT 1[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 111) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.0ms)[0m  BEGIN
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` = BINARY 'Thermodynamics') AND (`categories`.`parent_id` = 109) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT MAX(`categories`.`rgt`) AS max_id FROM `categories`
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `categories` (`created_at`, `description`, `lft`, `name`, `parent_id`, `rgt`, `updated_at`) VALUES ('2010-08-11 17:41:27', 'The physics of thermodynamics.', 9, 'Thermodynamics', 109, 10, '2010-08-11 17:41:27')[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT `categories`.* FROM `categories` WHERE (`categories`.`id` = 109) ORDER BY `lft` LIMIT 1
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 112) LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE `categories` SET `lft` = CASE WHEN `lft` BETWEEN 5 AND 8 THEN `lft` + 10 - 8 WHEN `lft` BETWEEN 9 AND 10 THEN `lft` + 5 - 9 ELSE `lft` END, `rgt` = CASE WHEN `rgt` BETWEEN 5 AND 8 THEN `rgt` + 10 - 8 WHEN `rgt` BETWEEN 9 AND 10 THEN `rgt` + 5 - 9 ELSE `rgt` END, `parent_id` = CASE WHEN id = 112 THEN 109 ELSE `parent_id` END 
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 109) LIMIT 1[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 112) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT COUNT(*) AS count_id FROM `categories` WHERE (`categories`.`lft` <= 2 AND `categories`.`rgt` >= 3) AND (`categories`.id != 109)
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT COUNT(*) AS count_id FROM `categories` WHERE (`categories`.parent_id = 109)[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT COUNT(*) AS count_id FROM `categories` WHERE (`categories`.`parent_id` = 109)
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT `categories`.* FROM `categories` WHERE (`categories`.`parent_id` IS NULL) ORDER BY `lft` LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT COUNT(*) AS count_id FROM `categories` WHERE (`categories`.`lft` >= 1 AND `categories`.`rgt` <= 10) AND (`categories`.id != 108)
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT `categories`.* FROM `categories` WHERE (`categories`.`parent_id` IS NULL) ORDER BY `lft` LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT COUNT(*) AS count_id FROM `categories` WHERE (`categories`.`lft` >= 1 AND `categories`.`rgt` <= 10) AND (`categories`.id != 108) AND (`categories`.`rgt` - `categories`.`lft` = 1)
+  [1m[36mSQL (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (2.5ms)[0m  describe `resources`
+  [1m[36mSQL (1.4ms)[0m  [1mINSERT INTO `resources` (`author`, `content_type`, `created_at`, `description`, `language`, `notes`, `title`, `updated_at`, `url`) VALUES ('An Author', 'text/html', '2010-08-11 17:41:27', 'description', 'english', 'notes', 'title', '2010-08-11 17:41:27', 'http://www.url.com')[0m
+  [1m[35mSQL (0.1ms)[0m  COMMIT
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.6ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.5ms)[0m  SHOW TABLES
+  [1m[36mSQL (1.1ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+Migrating to ResorcerTotalMigrations (20100811083909)
+  [1m[35mSQL (0.5ms)[0m  DELETE FROM `categories`
+WARNING: Can't mass-assign protected attributes: lft, rgt
+  [1m[36mCategory Load (1.1ms)[0m  [1mSELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` = BINARY 'valid category') AND (`categories`.`parent_id` = 0) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM `categories`
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` IS NULL) AND (`categories`.`parent_id` IS NULL) LIMIT 1[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` IS NULL) AND (`categories`.`parent_id` IS NULL) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM `categories`[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` = BINARY 'Science') AND (`categories`.`parent_id` IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT MAX(`categories`.`rgt`) AS max_id FROM `categories`
+  [1m[36mSQL (1.9ms)[0m  [1mdescribe `categories`[0m
+  [1m[35mSQL (1.1ms)[0m  INSERT INTO `categories` (`created_at`, `description`, `lft`, `name`, `parent_id`, `rgt`, `updated_at`) VALUES ('2010-08-11 17:43:17', 'A top level category to hold all sub-categories of Science.', 1, 'Science', NULL, 2, '2010-08-11 17:43:17')
+  [1m[36mSQL (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` = BINARY 'Science') AND (`categories`.`parent_id` = 113) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM `categories`[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` = BINARY 'Science') AND (`categories`.`parent_id` IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT MAX(`categories`.`rgt`) AS max_id FROM `categories`
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `categories` (`created_at`, `description`, `lft`, `name`, `parent_id`, `rgt`, `updated_at`) VALUES ('2010-08-11 17:43:18', 'A top level category to hold all sub-categories of Science.', 1, 'Science', NULL, 2, '2010-08-11 17:43:18')[0m
+  [1m[35mSQL (0.1ms)[0m  COMMIT
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` = BINARY 'Science') AND (`categories`.`parent_id` IS NULL) LIMIT 1[0m
+  [1m[35mCategory Load (0.3ms)[0m  SELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` = BINARY 'Science') AND (`categories`.`parent_id` IS NULL) LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM `categories`[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` = BINARY 'Science') AND (`categories`.`parent_id` IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT MAX(`categories`.`rgt`) AS max_id FROM `categories`
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `categories` (`created_at`, `description`, `lft`, `name`, `parent_id`, `rgt`, `updated_at`) VALUES ('2010-08-11 17:43:18', 'A top level category to hold all sub-categories of Science.', 1, 'Science', NULL, 2, '2010-08-11 17:43:18')[0m
+  [1m[35mSQL (0.1ms)[0m  COMMIT
+  [1m[36mSQL (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` = BINARY 'Physics') AND (`categories`.`parent_id` IS NULL) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT MAX(`categories`.`rgt`) AS max_id FROM `categories`[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `categories` (`created_at`, `description`, `lft`, `name`, `parent_id`, `rgt`, `updated_at`) VALUES ('2010-08-11 17:43:18', 'A sub-category of Science.', 3, 'Physics', NULL, 4, '2010-08-11 17:43:18')
+  [1m[36mSQL (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.0ms)[0m  BEGIN
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 115) LIMIT 1[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 116) LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE `categories` SET `lft` = CASE WHEN `lft` BETWEEN 2 AND 2 THEN `lft` + 4 - 2 WHEN `lft` BETWEEN 3 AND 4 THEN `lft` + 2 - 3 ELSE `lft` END, `rgt` = CASE WHEN `rgt` BETWEEN 2 AND 2 THEN `rgt` + 4 - 2 WHEN `rgt` BETWEEN 3 AND 4 THEN `rgt` + 2 - 3 ELSE `rgt` END, `parent_id` = CASE WHEN id = 116 THEN 115 ELSE `parent_id` END [0m
+  [1m[35mSQL (0.1ms)[0m  COMMIT
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 115) LIMIT 1[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 116) LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` = BINARY 'Biology') AND (`categories`.`parent_id` IS NULL) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT MAX(`categories`.`rgt`) AS max_id FROM `categories`[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `categories` (`created_at`, `description`, `lft`, `name`, `parent_id`, `rgt`, `updated_at`) VALUES ('2010-08-11 17:43:18', 'A sub-category of Science.', 5, 'Biology', NULL, 6, '2010-08-11 17:43:18')
+  [1m[36mSQL (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 115) LIMIT 1[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 117) LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE `categories` SET `lft` = CASE WHEN `lft` BETWEEN 4 AND 4 THEN `lft` + 6 - 4 WHEN `lft` BETWEEN 5 AND 6 THEN `lft` + 4 - 5 ELSE `lft` END, `rgt` = CASE WHEN `rgt` BETWEEN 4 AND 4 THEN `rgt` + 6 - 4 WHEN `rgt` BETWEEN 5 AND 6 THEN `rgt` + 4 - 5 ELSE `rgt` END, `parent_id` = CASE WHEN id = 117 THEN 115 ELSE `parent_id` END [0m
+  [1m[35mSQL (0.1ms)[0m  COMMIT
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 115) LIMIT 1[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 117) LIMIT 1
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT `categories`.* FROM `categories` WHERE (`categories`.`id` = 115) LIMIT 1[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT `categories`.* FROM `categories` WHERE (`categories`.`parent_id` IS NULL) ORDER BY `lft` LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM `categories`[0m
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` = BINARY 'Science') AND (`categories`.`parent_id` IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT MAX(`categories`.`rgt`) AS max_id FROM `categories`
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `categories` (`created_at`, `description`, `lft`, `name`, `parent_id`, `rgt`, `updated_at`) VALUES ('2010-08-11 17:43:18', 'A top level category to hold all sub-categories of Science.', 1, 'Science', NULL, 2, '2010-08-11 17:43:18')[0m
+  [1m[35mSQL (0.1ms)[0m  COMMIT
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mCategory Load (0.3ms)[0m  SELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` = BINARY 'Physics') AND (`categories`.`parent_id` IS NULL) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT MAX(`categories`.`rgt`) AS max_id FROM `categories`[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO `categories` (`created_at`, `description`, `lft`, `name`, `parent_id`, `rgt`, `updated_at`) VALUES ('2010-08-11 17:43:18', 'A sub-category of Science.', 3, 'Physics', NULL, 4, '2010-08-11 17:43:18')
+  [1m[36mSQL (0.0ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.0ms)[0m  BEGIN
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 118) LIMIT 1[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 119) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE `categories` SET `lft` = CASE WHEN `lft` BETWEEN 2 AND 2 THEN `lft` + 4 - 2 WHEN `lft` BETWEEN 3 AND 4 THEN `lft` + 2 - 3 ELSE `lft` END, `rgt` = CASE WHEN `rgt` BETWEEN 2 AND 2 THEN `rgt` + 4 - 2 WHEN `rgt` BETWEEN 3 AND 4 THEN `rgt` + 2 - 3 ELSE `rgt` END, `parent_id` = CASE WHEN id = 119 THEN 118 ELSE `parent_id` END [0m
+  [1m[35mSQL (0.1ms)[0m  COMMIT
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 118) LIMIT 1[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 119) LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` = BINARY 'Biology') AND (`categories`.`parent_id` IS NULL) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT MAX(`categories`.`rgt`) AS max_id FROM `categories`[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `categories` (`created_at`, `description`, `lft`, `name`, `parent_id`, `rgt`, `updated_at`) VALUES ('2010-08-11 17:43:18', 'A sub-category of Science.', 5, 'Biology', NULL, 6, '2010-08-11 17:43:18')
+  [1m[36mSQL (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 118) LIMIT 1[0m
+  [1m[35mCategory Load (0.3ms)[0m  SELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 120) LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE `categories` SET `lft` = CASE WHEN `lft` BETWEEN 4 AND 4 THEN `lft` + 6 - 4 WHEN `lft` BETWEEN 5 AND 6 THEN `lft` + 4 - 5 ELSE `lft` END, `rgt` = CASE WHEN `rgt` BETWEEN 4 AND 4 THEN `rgt` + 6 - 4 WHEN `rgt` BETWEEN 5 AND 6 THEN `rgt` + 4 - 5 ELSE `rgt` END, `parent_id` = CASE WHEN id = 120 THEN 118 ELSE `parent_id` END [0m
+  [1m[35mSQL (0.1ms)[0m  COMMIT
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 118) LIMIT 1[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 120) LIMIT 1
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT `categories`.* FROM `categories` WHERE (`categories`.`id` = 118) LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT COUNT(*) AS count_id FROM `categories` WHERE (`categories`.parent_id = 118)
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM `categories`[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` = BINARY 'Science') AND (`categories`.`parent_id` IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT MAX(`categories`.`rgt`) AS max_id FROM `categories`
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `categories` (`created_at`, `description`, `lft`, `name`, `parent_id`, `rgt`, `updated_at`) VALUES ('2010-08-11 17:43:18', 'A top level category to hold all sub-categories of Science.', 1, 'Science', NULL, 2, '2010-08-11 17:43:18')[0m
+  [1m[35mSQL (0.1ms)[0m  COMMIT
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mCategory Load (0.3ms)[0m  SELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` = BINARY 'Physics') AND (`categories`.`parent_id` IS NULL) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT MAX(`categories`.`rgt`) AS max_id FROM `categories`[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `categories` (`created_at`, `description`, `lft`, `name`, `parent_id`, `rgt`, `updated_at`) VALUES ('2010-08-11 17:43:18', 'A sub-category of Science.', 3, 'Physics', NULL, 4, '2010-08-11 17:43:18')
+  [1m[36mSQL (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 121) LIMIT 1[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 122) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE `categories` SET `lft` = CASE WHEN `lft` BETWEEN 2 AND 2 THEN `lft` + 4 - 2 WHEN `lft` BETWEEN 3 AND 4 THEN `lft` + 2 - 3 ELSE `lft` END, `rgt` = CASE WHEN `rgt` BETWEEN 2 AND 2 THEN `rgt` + 4 - 2 WHEN `rgt` BETWEEN 3 AND 4 THEN `rgt` + 2 - 3 ELSE `rgt` END, `parent_id` = CASE WHEN id = 122 THEN 121 ELSE `parent_id` END [0m
+  [1m[35mSQL (0.1ms)[0m  COMMIT
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 121) LIMIT 1[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 122) LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` = BINARY 'Biology') AND (`categories`.`parent_id` IS NULL) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT MAX(`categories`.`rgt`) AS max_id FROM `categories`[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `categories` (`created_at`, `description`, `lft`, `name`, `parent_id`, `rgt`, `updated_at`) VALUES ('2010-08-11 17:43:18', 'A sub-category of Science.', 5, 'Biology', NULL, 6, '2010-08-11 17:43:18')
+  [1m[36mSQL (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.0ms)[0m  BEGIN
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 121) LIMIT 1[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 123) LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE `categories` SET `lft` = CASE WHEN `lft` BETWEEN 4 AND 4 THEN `lft` + 6 - 4 WHEN `lft` BETWEEN 5 AND 6 THEN `lft` + 4 - 5 ELSE `lft` END, `rgt` = CASE WHEN `rgt` BETWEEN 4 AND 4 THEN `rgt` + 6 - 4 WHEN `rgt` BETWEEN 5 AND 6 THEN `rgt` + 4 - 5 ELSE `rgt` END, `parent_id` = CASE WHEN id = 123 THEN 121 ELSE `parent_id` END [0m
+  [1m[35mSQL (0.1ms)[0m  COMMIT
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 121) LIMIT 1[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 123) LIMIT 1
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT `categories`.* FROM `categories` WHERE (`categories`.`id` = 121) LIMIT 1[0m
+  [1m[35mCategory Load (0.3ms)[0m  SELECT `categories`.`id`, `categories`.`name`, `categories`.`description`, `categories`.`parent_id`, `categories`.`lft`, `categories`.`rgt`, `categories`.`created_at`, `categories`.`updated_at` FROM `categories` WHERE (`categories`.parent_id = 121) ORDER BY `lft`
+  [1m[36mSQL (0.5ms)[0m  [1mDELETE FROM `categories`[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mCategory Load (0.4ms)[0m  [1mSELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` = BINARY 'Science') AND (`categories`.`parent_id` IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT MAX(`categories`.`rgt`) AS max_id FROM `categories`
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `categories` (`created_at`, `description`, `lft`, `name`, `parent_id`, `rgt`, `updated_at`) VALUES ('2010-08-11 17:43:18', 'A top level category to hold all sub-categories of Science.', 1, 'Science', NULL, 2, '2010-08-11 17:43:18')[0m
+  [1m[35mSQL (0.1ms)[0m  COMMIT
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mCategory Load (0.3ms)[0m  SELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` = BINARY 'Physics') AND (`categories`.`parent_id` IS NULL) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT MAX(`categories`.`rgt`) AS max_id FROM `categories`[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `categories` (`created_at`, `description`, `lft`, `name`, `parent_id`, `rgt`, `updated_at`) VALUES ('2010-08-11 17:43:18', 'A sub-category of Science.', 3, 'Physics', NULL, 4, '2010-08-11 17:43:18')
+  [1m[36mSQL (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 124) LIMIT 1[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 125) LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE `categories` SET `lft` = CASE WHEN `lft` BETWEEN 2 AND 2 THEN `lft` + 4 - 2 WHEN `lft` BETWEEN 3 AND 4 THEN `lft` + 2 - 3 ELSE `lft` END, `rgt` = CASE WHEN `rgt` BETWEEN 2 AND 2 THEN `rgt` + 4 - 2 WHEN `rgt` BETWEEN 3 AND 4 THEN `rgt` + 2 - 3 ELSE `rgt` END, `parent_id` = CASE WHEN id = 125 THEN 124 ELSE `parent_id` END [0m
+  [1m[35mSQL (0.1ms)[0m  COMMIT
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 124) LIMIT 1[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 125) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mCategory Load (0.4ms)[0m  SELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` = BINARY 'Biology') AND (`categories`.`parent_id` IS NULL) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT MAX(`categories`.`rgt`) AS max_id FROM `categories`[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `categories` (`created_at`, `description`, `lft`, `name`, `parent_id`, `rgt`, `updated_at`) VALUES ('2010-08-11 17:43:18', 'A sub-category of Science.', 5, 'Biology', NULL, 6, '2010-08-11 17:43:18')
+  [1m[36mSQL (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 124) LIMIT 1[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 126) LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE `categories` SET `lft` = CASE WHEN `lft` BETWEEN 4 AND 4 THEN `lft` + 6 - 4 WHEN `lft` BETWEEN 5 AND 6 THEN `lft` + 4 - 5 ELSE `lft` END, `rgt` = CASE WHEN `rgt` BETWEEN 4 AND 4 THEN `rgt` + 6 - 4 WHEN `rgt` BETWEEN 5 AND 6 THEN `rgt` + 4 - 5 ELSE `rgt` END, `parent_id` = CASE WHEN id = 126 THEN 124 ELSE `parent_id` END [0m
+  [1m[35mSQL (0.1ms)[0m  COMMIT
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 124) LIMIT 1[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 126) LIMIT 1
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT `categories`.* FROM `categories` WHERE (`categories`.`id` = 124) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` = BINARY 'Gravity') AND (`categories`.`parent_id` = 125) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT MAX(`categories`.`rgt`) AS max_id FROM `categories`
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `categories` (`created_at`, `description`, `lft`, `name`, `parent_id`, `rgt`, `updated_at`) VALUES ('2010-08-11 17:43:18', 'The physics of gravity.', 7, 'Gravity', 125, 8, '2010-08-11 17:43:18')[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT `categories`.* FROM `categories` WHERE (`categories`.`id` = 125) ORDER BY `lft` LIMIT 1
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 127) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE `categories` SET `lft` = CASE WHEN `lft` BETWEEN 3 AND 6 THEN `lft` + 8 - 6 WHEN `lft` BETWEEN 7 AND 8 THEN `lft` + 3 - 7 ELSE `lft` END, `rgt` = CASE WHEN `rgt` BETWEEN 3 AND 6 THEN `rgt` + 8 - 6 WHEN `rgt` BETWEEN 7 AND 8 THEN `rgt` + 3 - 7 ELSE `rgt` END, `parent_id` = CASE WHEN id = 127 THEN 125 ELSE `parent_id` END 
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 125) LIMIT 1[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 127) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` = BINARY 'Thermodynamics') AND (`categories`.`parent_id` = 125) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT MAX(`categories`.`rgt`) AS max_id FROM `categories`
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `categories` (`created_at`, `description`, `lft`, `name`, `parent_id`, `rgt`, `updated_at`) VALUES ('2010-08-11 17:43:18', 'The physics of thermodynamics.', 9, 'Thermodynamics', 125, 10, '2010-08-11 17:43:18')[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT `categories`.* FROM `categories` WHERE (`categories`.`id` = 125) ORDER BY `lft` LIMIT 1
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 128) LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  UPDATE `categories` SET `lft` = CASE WHEN `lft` BETWEEN 5 AND 8 THEN `lft` + 10 - 8 WHEN `lft` BETWEEN 9 AND 10 THEN `lft` + 5 - 9 ELSE `lft` END, `rgt` = CASE WHEN `rgt` BETWEEN 5 AND 8 THEN `rgt` + 10 - 8 WHEN `rgt` BETWEEN 9 AND 10 THEN `rgt` + 5 - 9 ELSE `rgt` END, `parent_id` = CASE WHEN id = 128 THEN 125 ELSE `parent_id` END 
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 125) LIMIT 1[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 128) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT COUNT(*) AS count_id FROM `categories` WHERE (`categories`.`lft` <= 2 AND `categories`.`rgt` >= 3) AND (`categories`.id != 125)
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT COUNT(*) AS count_id FROM `categories` WHERE (`categories`.parent_id = 125)[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT COUNT(*) AS count_id FROM `categories` WHERE (`categories`.`parent_id` = 125)
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT `categories`.* FROM `categories` WHERE (`categories`.`parent_id` IS NULL) ORDER BY `lft` LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT COUNT(*) AS count_id FROM `categories` WHERE (`categories`.`lft` >= 1 AND `categories`.`rgt` <= 10) AND (`categories`.id != 124)
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT `categories`.* FROM `categories` WHERE (`categories`.`parent_id` IS NULL) ORDER BY `lft` LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT COUNT(*) AS count_id FROM `categories` WHERE (`categories`.`lft` >= 1 AND `categories`.`rgt` <= 10) AND (`categories`.id != 124) AND (`categories`.`rgt` - `categories`.`lft` = 1)
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (2.3ms)[0m  describe `resources`
+  [1m[36mSQL (1.3ms)[0m  [1mINSERT INTO `resources` (`author`, `content_type`, `created_at`, `description`, `language`, `notes`, `title`, `updated_at`, `url`) VALUES ('An Author', 'text/html', '2010-08-11 17:43:18', 'description', 'english', 'notes', 'title', '2010-08-11 17:43:18', 'http://www.url.com')[0m
+  [1m[35mSQL (0.1ms)[0m  COMMIT
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  ROLLBACK
+  [1m[36mSQL (0.7ms)[0m  [1mSHOW TABLES[0m
+  [1m[36mSQL (1.3ms)[0m  [1mSHOW TABLES[0m
+  [1m[36mSQL (7.9ms)[0m  [1mSHOW TABLES[0m
+  [1m[36mSQL (0.6ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.5ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.6ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.5ms)[0m  SHOW TABLES
+  [1m[36mSQL (1.7ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+Migrating to ResorcerTotalMigrations (20100811083909)
+Migrating to ActsAsTaggableOnMigration (20100812075848)
+  [1m[35mSQL (21.1ms)[0m  CREATE TABLE `tags` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255)) ENGINE=InnoDB
+  [1m[36mSQL (2.5ms)[0m  [1mCREATE TABLE `taggings` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `tag_id` int(11), `taggable_id` int(11), `taggable_type` varchar(255), `tagger_id` int(11), `tagger_type` varchar(255), `context` varchar(255), `created_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW KEYS FROM `taggings`
+  [1m[36mSQL (26.8ms)[0m  [1mCREATE INDEX `index_taggings_on_tag_id` ON `taggings` (`tag_id`)[0m
+  [1m[35mSQL (0.5ms)[0m  SHOW KEYS FROM `taggings`
+  [1m[36mSQL (14.1ms)[0m  [1mCREATE INDEX `index_taggings_on_taggable_id_and_taggable_type_and_context` ON `taggings` (`taggable_id`, `taggable_type`, `context`)[0m
+  [1m[35mSQL (1.6ms)[0m  describe `schema_migrations`
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20100812075848')[0m
+  [1m[35mSQL (29.9ms)[0m  DELETE FROM `categories`
+WARNING: Can't mass-assign protected attributes: lft, rgt
+  [1m[36mCategory Load (1.2ms)[0m  [1mSELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` = BINARY 'valid category') AND (`categories`.`parent_id` = 0) LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM `categories`
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` IS NULL) AND (`categories`.`parent_id` IS NULL) LIMIT 1[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` IS NULL) AND (`categories`.`parent_id` IS NULL) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM `categories`[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mCategory Load (0.5ms)[0m  [1mSELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` = BINARY 'Science') AND (`categories`.`parent_id` IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  SELECT MAX(`categories`.`rgt`) AS max_id FROM `categories`
+  [1m[36mSQL (1.8ms)[0m  [1mdescribe `categories`[0m
+  [1m[35mSQL (1.2ms)[0m  INSERT INTO `categories` (`created_at`, `description`, `lft`, `name`, `parent_id`, `rgt`, `updated_at`) VALUES ('2010-08-12 08:04:12', 'A top level category to hold all sub-categories of Science.', 1, 'Science', NULL, 2, '2010-08-12 08:04:12')
+  [1m[36mSQL (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` = BINARY 'Science') AND (`categories`.`parent_id` = 1) LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM `categories`[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` = BINARY 'Science') AND (`categories`.`parent_id` IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT MAX(`categories`.`rgt`) AS max_id FROM `categories`
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `categories` (`created_at`, `description`, `lft`, `name`, `parent_id`, `rgt`, `updated_at`) VALUES ('2010-08-12 08:04:12', 'A top level category to hold all sub-categories of Science.', 1, 'Science', NULL, 2, '2010-08-12 08:04:12')[0m
+  [1m[35mSQL (0.1ms)[0m  COMMIT
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` = BINARY 'Science') AND (`categories`.`parent_id` IS NULL) LIMIT 1[0m
+  [1m[35mCategory Load (0.3ms)[0m  SELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` = BINARY 'Science') AND (`categories`.`parent_id` IS NULL) LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mDELETE FROM `categories`[0m
+  [1m[35mSQL (0.0ms)[0m  BEGIN
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` = BINARY 'Science') AND (`categories`.`parent_id` IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT MAX(`categories`.`rgt`) AS max_id FROM `categories`
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `categories` (`created_at`, `description`, `lft`, `name`, `parent_id`, `rgt`, `updated_at`) VALUES ('2010-08-12 08:04:12', 'A top level category to hold all sub-categories of Science.', 1, 'Science', NULL, 2, '2010-08-12 08:04:12')[0m
+  [1m[35mSQL (0.1ms)[0m  COMMIT
+  [1m[36mSQL (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` = BINARY 'Physics') AND (`categories`.`parent_id` IS NULL) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT MAX(`categories`.`rgt`) AS max_id FROM `categories`[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `categories` (`created_at`, `description`, `lft`, `name`, `parent_id`, `rgt`, `updated_at`) VALUES ('2010-08-12 08:04:12', 'A sub-category of Science.', 3, 'Physics', NULL, 4, '2010-08-12 08:04:12')
+  [1m[36mSQL (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 3) LIMIT 1[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 4) LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE `categories` SET `lft` = CASE WHEN `lft` BETWEEN 2 AND 2 THEN `lft` + 4 - 2 WHEN `lft` BETWEEN 3 AND 4 THEN `lft` + 2 - 3 ELSE `lft` END, `rgt` = CASE WHEN `rgt` BETWEEN 2 AND 2 THEN `rgt` + 4 - 2 WHEN `rgt` BETWEEN 3 AND 4 THEN `rgt` + 2 - 3 ELSE `rgt` END, `parent_id` = CASE WHEN id = 4 THEN 3 ELSE `parent_id` END [0m
+  [1m[35mSQL (0.1ms)[0m  COMMIT
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 3) LIMIT 1[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 4) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mCategory Load (0.3ms)[0m  SELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` = BINARY 'Biology') AND (`categories`.`parent_id` IS NULL) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT MAX(`categories`.`rgt`) AS max_id FROM `categories`[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `categories` (`created_at`, `description`, `lft`, `name`, `parent_id`, `rgt`, `updated_at`) VALUES ('2010-08-12 08:04:12', 'A sub-category of Science.', 5, 'Biology', NULL, 6, '2010-08-12 08:04:12')
+  [1m[36mSQL (0.0ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.0ms)[0m  BEGIN
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 3) LIMIT 1[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 5) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE `categories` SET `lft` = CASE WHEN `lft` BETWEEN 4 AND 4 THEN `lft` + 6 - 4 WHEN `lft` BETWEEN 5 AND 6 THEN `lft` + 4 - 5 ELSE `lft` END, `rgt` = CASE WHEN `rgt` BETWEEN 4 AND 4 THEN `rgt` + 6 - 4 WHEN `rgt` BETWEEN 5 AND 6 THEN `rgt` + 4 - 5 ELSE `rgt` END, `parent_id` = CASE WHEN id = 5 THEN 3 ELSE `parent_id` END [0m
+  [1m[35mSQL (0.1ms)[0m  COMMIT
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 3) LIMIT 1[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 5) LIMIT 1
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT `categories`.* FROM `categories` WHERE (`categories`.`id` = 3) LIMIT 1[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT `categories`.* FROM `categories` WHERE (`categories`.`parent_id` IS NULL) ORDER BY `lft` LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mDELETE FROM `categories`[0m
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` = BINARY 'Science') AND (`categories`.`parent_id` IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT MAX(`categories`.`rgt`) AS max_id FROM `categories`
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `categories` (`created_at`, `description`, `lft`, `name`, `parent_id`, `rgt`, `updated_at`) VALUES ('2010-08-12 08:04:12', 'A top level category to hold all sub-categories of Science.', 1, 'Science', NULL, 2, '2010-08-12 08:04:12')[0m
+  [1m[35mSQL (0.2ms)[0m  COMMIT
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mCategory Load (0.3ms)[0m  SELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` = BINARY 'Physics') AND (`categories`.`parent_id` IS NULL) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT MAX(`categories`.`rgt`) AS max_id FROM `categories`[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `categories` (`created_at`, `description`, `lft`, `name`, `parent_id`, `rgt`, `updated_at`) VALUES ('2010-08-12 08:04:12', 'A sub-category of Science.', 3, 'Physics', NULL, 4, '2010-08-12 08:04:12')
+  [1m[36mSQL (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 6) LIMIT 1[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 7) LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE `categories` SET `lft` = CASE WHEN `lft` BETWEEN 2 AND 2 THEN `lft` + 4 - 2 WHEN `lft` BETWEEN 3 AND 4 THEN `lft` + 2 - 3 ELSE `lft` END, `rgt` = CASE WHEN `rgt` BETWEEN 2 AND 2 THEN `rgt` + 4 - 2 WHEN `rgt` BETWEEN 3 AND 4 THEN `rgt` + 2 - 3 ELSE `rgt` END, `parent_id` = CASE WHEN id = 7 THEN 6 ELSE `parent_id` END [0m
+  [1m[35mSQL (0.1ms)[0m  COMMIT
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 6) LIMIT 1[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 7) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mCategory Load (0.3ms)[0m  SELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` = BINARY 'Biology') AND (`categories`.`parent_id` IS NULL) LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT MAX(`categories`.`rgt`) AS max_id FROM `categories`[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `categories` (`created_at`, `description`, `lft`, `name`, `parent_id`, `rgt`, `updated_at`) VALUES ('2010-08-12 08:04:12', 'A sub-category of Science.', 5, 'Biology', NULL, 6, '2010-08-12 08:04:12')
+  [1m[36mSQL (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 6) LIMIT 1[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 8) LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE `categories` SET `lft` = CASE WHEN `lft` BETWEEN 4 AND 4 THEN `lft` + 6 - 4 WHEN `lft` BETWEEN 5 AND 6 THEN `lft` + 4 - 5 ELSE `lft` END, `rgt` = CASE WHEN `rgt` BETWEEN 4 AND 4 THEN `rgt` + 6 - 4 WHEN `rgt` BETWEEN 5 AND 6 THEN `rgt` + 4 - 5 ELSE `rgt` END, `parent_id` = CASE WHEN id = 8 THEN 6 ELSE `parent_id` END [0m
+  [1m[35mSQL (0.1ms)[0m  COMMIT
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 6) LIMIT 1[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 8) LIMIT 1
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT `categories`.* FROM `categories` WHERE (`categories`.`id` = 6) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT COUNT(*) AS count_id FROM `categories` WHERE (`categories`.parent_id = 6)
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM `categories`[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` = BINARY 'Science') AND (`categories`.`parent_id` IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT MAX(`categories`.`rgt`) AS max_id FROM `categories`
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `categories` (`created_at`, `description`, `lft`, `name`, `parent_id`, `rgt`, `updated_at`) VALUES ('2010-08-12 08:04:12', 'A top level category to hold all sub-categories of Science.', 1, 'Science', NULL, 2, '2010-08-12 08:04:12')[0m
+  [1m[35mSQL (0.3ms)[0m  COMMIT
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` = BINARY 'Physics') AND (`categories`.`parent_id` IS NULL) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT MAX(`categories`.`rgt`) AS max_id FROM `categories`[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `categories` (`created_at`, `description`, `lft`, `name`, `parent_id`, `rgt`, `updated_at`) VALUES ('2010-08-12 08:04:12', 'A sub-category of Science.', 3, 'Physics', NULL, 4, '2010-08-12 08:04:12')
+  [1m[36mSQL (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.0ms)[0m  BEGIN
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 9) LIMIT 1[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 10) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE `categories` SET `lft` = CASE WHEN `lft` BETWEEN 2 AND 2 THEN `lft` + 4 - 2 WHEN `lft` BETWEEN 3 AND 4 THEN `lft` + 2 - 3 ELSE `lft` END, `rgt` = CASE WHEN `rgt` BETWEEN 2 AND 2 THEN `rgt` + 4 - 2 WHEN `rgt` BETWEEN 3 AND 4 THEN `rgt` + 2 - 3 ELSE `rgt` END, `parent_id` = CASE WHEN id = 10 THEN 9 ELSE `parent_id` END [0m
+  [1m[35mSQL (0.1ms)[0m  COMMIT
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 9) LIMIT 1[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 10) LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` = BINARY 'Biology') AND (`categories`.`parent_id` IS NULL) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT MAX(`categories`.`rgt`) AS max_id FROM `categories`[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `categories` (`created_at`, `description`, `lft`, `name`, `parent_id`, `rgt`, `updated_at`) VALUES ('2010-08-12 08:04:12', 'A sub-category of Science.', 5, 'Biology', NULL, 6, '2010-08-12 08:04:12')
+  [1m[36mSQL (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 9) LIMIT 1[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 11) LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE `categories` SET `lft` = CASE WHEN `lft` BETWEEN 4 AND 4 THEN `lft` + 6 - 4 WHEN `lft` BETWEEN 5 AND 6 THEN `lft` + 4 - 5 ELSE `lft` END, `rgt` = CASE WHEN `rgt` BETWEEN 4 AND 4 THEN `rgt` + 6 - 4 WHEN `rgt` BETWEEN 5 AND 6 THEN `rgt` + 4 - 5 ELSE `rgt` END, `parent_id` = CASE WHEN id = 11 THEN 9 ELSE `parent_id` END [0m
+  [1m[35mSQL (0.0ms)[0m  COMMIT
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 9) LIMIT 1[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 11) LIMIT 1
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT `categories`.* FROM `categories` WHERE (`categories`.`id` = 9) LIMIT 1[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT `categories`.`id`, `categories`.`name`, `categories`.`description`, `categories`.`parent_id`, `categories`.`lft`, `categories`.`rgt`, `categories`.`created_at`, `categories`.`updated_at` FROM `categories` WHERE (`categories`.parent_id = 9) ORDER BY `lft`
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM `categories`[0m
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` = BINARY 'Science') AND (`categories`.`parent_id` IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT MAX(`categories`.`rgt`) AS max_id FROM `categories`
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `categories` (`created_at`, `description`, `lft`, `name`, `parent_id`, `rgt`, `updated_at`) VALUES ('2010-08-12 08:04:12', 'A top level category to hold all sub-categories of Science.', 1, 'Science', NULL, 2, '2010-08-12 08:04:12')[0m
+  [1m[35mSQL (0.1ms)[0m  COMMIT
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mCategory Load (0.3ms)[0m  SELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` = BINARY 'Physics') AND (`categories`.`parent_id` IS NULL) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT MAX(`categories`.`rgt`) AS max_id FROM `categories`[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `categories` (`created_at`, `description`, `lft`, `name`, `parent_id`, `rgt`, `updated_at`) VALUES ('2010-08-12 08:04:12', 'A sub-category of Science.', 3, 'Physics', NULL, 4, '2010-08-12 08:04:12')
+  [1m[36mSQL (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 12) LIMIT 1[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 13) LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE `categories` SET `lft` = CASE WHEN `lft` BETWEEN 2 AND 2 THEN `lft` + 4 - 2 WHEN `lft` BETWEEN 3 AND 4 THEN `lft` + 2 - 3 ELSE `lft` END, `rgt` = CASE WHEN `rgt` BETWEEN 2 AND 2 THEN `rgt` + 4 - 2 WHEN `rgt` BETWEEN 3 AND 4 THEN `rgt` + 2 - 3 ELSE `rgt` END, `parent_id` = CASE WHEN id = 13 THEN 12 ELSE `parent_id` END [0m
+  [1m[35mSQL (0.1ms)[0m  COMMIT
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 12) LIMIT 1[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 13) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` = BINARY 'Biology') AND (`categories`.`parent_id` IS NULL) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT MAX(`categories`.`rgt`) AS max_id FROM `categories`[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `categories` (`created_at`, `description`, `lft`, `name`, `parent_id`, `rgt`, `updated_at`) VALUES ('2010-08-12 08:04:12', 'A sub-category of Science.', 5, 'Biology', NULL, 6, '2010-08-12 08:04:12')
+  [1m[36mSQL (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 12) LIMIT 1[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 14) LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE `categories` SET `lft` = CASE WHEN `lft` BETWEEN 4 AND 4 THEN `lft` + 6 - 4 WHEN `lft` BETWEEN 5 AND 6 THEN `lft` + 4 - 5 ELSE `lft` END, `rgt` = CASE WHEN `rgt` BETWEEN 4 AND 4 THEN `rgt` + 6 - 4 WHEN `rgt` BETWEEN 5 AND 6 THEN `rgt` + 4 - 5 ELSE `rgt` END, `parent_id` = CASE WHEN id = 14 THEN 12 ELSE `parent_id` END [0m
+  [1m[35mSQL (0.2ms)[0m  COMMIT
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 12) LIMIT 1[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 14) LIMIT 1
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT `categories`.* FROM `categories` WHERE (`categories`.`id` = 12) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` = BINARY 'Gravity') AND (`categories`.`parent_id` = 13) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT MAX(`categories`.`rgt`) AS max_id FROM `categories`
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `categories` (`created_at`, `description`, `lft`, `name`, `parent_id`, `rgt`, `updated_at`) VALUES ('2010-08-12 08:04:12', 'The physics of gravity.', 7, 'Gravity', 13, 8, '2010-08-12 08:04:12')[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT `categories`.* FROM `categories` WHERE (`categories`.`id` = 13) ORDER BY `lft` LIMIT 1
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 15) LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE `categories` SET `lft` = CASE WHEN `lft` BETWEEN 3 AND 6 THEN `lft` + 8 - 6 WHEN `lft` BETWEEN 7 AND 8 THEN `lft` + 3 - 7 ELSE `lft` END, `rgt` = CASE WHEN `rgt` BETWEEN 3 AND 6 THEN `rgt` + 8 - 6 WHEN `rgt` BETWEEN 7 AND 8 THEN `rgt` + 3 - 7 ELSE `rgt` END, `parent_id` = CASE WHEN id = 15 THEN 13 ELSE `parent_id` END 
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 13) LIMIT 1[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 15) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.0ms)[0m  BEGIN
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT `categories`.`id` FROM `categories` WHERE (`categories`.`name` = BINARY 'Thermodynamics') AND (`categories`.`parent_id` = 13) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT MAX(`categories`.`rgt`) AS max_id FROM `categories`
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `categories` (`created_at`, `description`, `lft`, `name`, `parent_id`, `rgt`, `updated_at`) VALUES ('2010-08-12 08:04:12', 'The physics of thermodynamics.', 9, 'Thermodynamics', 13, 10, '2010-08-12 08:04:12')[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT `categories`.* FROM `categories` WHERE (`categories`.`id` = 13) ORDER BY `lft` LIMIT 1
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 16) LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE `categories` SET `lft` = CASE WHEN `lft` BETWEEN 5 AND 8 THEN `lft` + 10 - 8 WHEN `lft` BETWEEN 9 AND 10 THEN `lft` + 5 - 9 ELSE `lft` END, `rgt` = CASE WHEN `rgt` BETWEEN 5 AND 8 THEN `rgt` + 10 - 8 WHEN `rgt` BETWEEN 9 AND 10 THEN `rgt` + 5 - 9 ELSE `rgt` END, `parent_id` = CASE WHEN id = 16 THEN 13 ELSE `parent_id` END 
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 13) LIMIT 1[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT `lft`, `rgt`, `parent_id` FROM `categories` WHERE (`categories`.`id` = 16) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT COUNT(*) AS count_id FROM `categories` WHERE (`categories`.`lft` <= 2 AND `categories`.`rgt` >= 3) AND (`categories`.id != 13)
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT COUNT(*) AS count_id FROM `categories` WHERE (`categories`.parent_id = 13)[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT COUNT(*) AS count_id FROM `categories` WHERE (`categories`.`parent_id` = 13)
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT `categories`.* FROM `categories` WHERE (`categories`.`parent_id` IS NULL) ORDER BY `lft` LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT COUNT(*) AS count_id FROM `categories` WHERE (`categories`.`lft` >= 1 AND `categories`.`rgt` <= 10) AND (`categories`.id != 12)
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT `categories`.* FROM `categories` WHERE (`categories`.`parent_id` IS NULL) ORDER BY `lft` LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT COUNT(*) AS count_id FROM `categories` WHERE (`categories`.`lft` >= 1 AND `categories`.`rgt` <= 10) AND (`categories`.id != 12) AND (`categories`.`rgt` - `categories`.`lft` = 1)
+  [1m[36mSQL (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.7ms)[0m  describe `resources`
+  [1m[36mSQL (1.2ms)[0m  [1mINSERT INTO `resources` (`author`, `content_type`, `created_at`, `description`, `language`, `notes`, `title`, `updated_at`, `url`) VALUES ('An Author', 'text/html', '2010-08-12 08:04:12', 'description', 'english', 'notes', 'title', '2010-08-12 08:04:12', 'http://www.url.com')[0m
+  [1m[35mSQL (0.1ms)[0m  COMMIT
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK

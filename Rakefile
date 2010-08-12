@@ -27,6 +27,7 @@ spec = Gem::Specification.new do |s|
   s.authors = ["Robert Schmitt"]
   s.files =  FileList["[A-Z]*", "lib/**/*", "app/**/*"]
   s.add_dependency("awesome_nested_set", ">= 1.4.3")
+  s.add_dependency("acts_as_rateable", ">= 2.0.1")
   s.version = "0.0.1"
 end
 
