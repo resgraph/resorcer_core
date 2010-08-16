@@ -52,7 +52,8 @@ GEM
       rails (>= 3.0.0.beta4)
     ffi (0.6.3)
       rake (>= 0.8.7)
-    haml (3.0.16)
+    haml (3.0.17)
+    hpricot (0.8.2)
     i18n (0.4.1)
     json_pure (1.4.6)
     mail (2.2.5)
@@ -117,6 +118,7 @@ DEPENDENCIES
   capybara (>= 0.3.9)
   factory_girl_rails
   haml
+  hpricot
   mysql
   rails (= 3.0.0.rc)
   rspec

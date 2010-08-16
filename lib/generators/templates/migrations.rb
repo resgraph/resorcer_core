@@ -1,4 +1,5 @@
-class ResorcerTotalMigrations < ActiveRecord::Migration
+class ResorcerCoreMigration < ActiveRecord::Migration
+  
   def self.up
     # Resource table
     create_table :resources do |t|
@@ -12,7 +13,7 @@ class ResorcerTotalMigrations < ActiveRecord::Migration
 
       t.timestamps
     end
-    add_index :resources, :url
+    add_index :resources, :url, :unique => true
 
     # Category table
     create_table :categories do |t|
@@ -34,8 +35,7 @@ class ResorcerTotalMigrations < ActiveRecord::Migration
       t.string :title, :null => false
       t.string :subtitle
       t.text :body, :null => false
-      t.integer :postable_id
-      t.string :postable_type
+      t.references :postable, :polymorphic => true
 
       t.timestamps
     end
@@ -51,8 +51,7 @@ class ResorcerTotalMigrations < ActiveRecord::Migration
       t.integer :parent_id
       t.integer :lft
       t.integer :rgt
-      t.integer :commentable_id
-      t.string  :commentable_type
+      t.references :commentable, :polymorphic => true
 
       t.timestamps
     end
@@ -62,19 +61,26 @@ class ResorcerTotalMigrations < ActiveRecord::Migration
     add_index :comments, :commentable_id
     add_index :comments, :commentable_type
 
+    # User table
     create_table :users do |t|
       t.string :first_name
       t.string :last_name
-      t.string :login
+      t.string :login, :null => false
       t.string :email, :null => false
       t.string :website
       t.string :facebook_account
       t.string :twitter_account
 
+      t.database_authenticatable :null => false
+      t.recoverable
+      t.rememberable
+      t.trackable
+
       t.timestamps
     end
-    add_index :users, :login
-    add_index :users, :email
+    add_index :users, :login, :unique => true
+    add_index :users, :email, :unique => true
+    add_index :users, :reset_password_token, :unique => true
 
   end
 

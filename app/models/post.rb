@@ -7,6 +7,9 @@ class Post < ActiveRecord::Base
   validates_presence_of :title, :body
   validates_associated :comments
 
+  # add tagging system
+  acts_as_taggable
+
   # with_scope finders
   scope :timed_posts, lambda { |from, till| { :conditions => { :created_at => from .. till } , :order => "created_at DESC" } }
 

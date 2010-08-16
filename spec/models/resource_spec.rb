@@ -2,6 +2,7 @@ require File.dirname(__FILE__) + '/../spec_helper'
 
 describe Resource do
   before do
+    Resource.delete_all
     @resource = Resource.new(:url => "http://www.resorcer.com/",
                              :title => "A Resorcer webpage",
                              :description => "This is a resorcer web page that contains a description of the Resorcer web system",

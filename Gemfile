@@ -5,7 +5,6 @@ gem "capybara", ">= 0.3.9"
 gem "mysql"
 
 gem 'haml'
-gem 'authlogic'
 
 if RUBY_VERSION < '1.9'
   gem "ruby-debug", ">= 0.10.3"
@@ -14,5 +13,7 @@ end
 gem "rspec-rails", ">= 2.0.0.beta"
 gem "rspec"
 gem 'factory_girl_rails'
-gem 'acts_as_rateable', ">= 2.0.1"
+gem "ajaxful_rating"
 gem 'acts-as-taggable-on'
+gem 'devise'
+gem 'paperclip'

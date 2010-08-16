@@ -1,6 +1,8 @@
 Factory.define :valid_user, :class => User do |u|
   u.login 'valid_user'
   u.email 'valid_user@test.com'
+  u.password 'password'
+  u.password_confirmation 'password'
   u.first_name 'Valid'
   u.last_name 'User'
   u.website 'http://www.valid_user.com'
@@ -11,4 +13,5 @@ end
 Factory.define :invalid_user, :class => User do |u|
   u.first_name 'Invalid'
   u.last_name 'User'
+  u.login 'invalid_user'
 end
